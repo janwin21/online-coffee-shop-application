@@ -1,0 +1,114 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+// coffee header display section
+.coffee-shop {
+    border-left: $border-space solid $white;
+    border-right: $border-space solid $white;
+
+    &-type { 
+        text-transform: capitalize; 
+        margin-top: 5rem !important;
+    }
+
+    h1 {
+        position: relative;
+        font-size: 1.25em;
+        font-weight: 600;
+        border-right: 1.5rem solid $gray-900;
+        color: $gray-900;
+    }
+
+    .card {
+        position: relative;
+        height: 250px !important;
+        border-radius: 0px;
+        border: none;
+        cursor: pointer;
+
+        .cover, .main-cover, .card-img-top {
+            position: absolute;
+            bottom: 0; left: 0;
+            border-radius: 6px !important;
+        }
+
+        .card-img-top { object-fit: cover; }
+        .cover { background-color: rgba($black, 0.3); }
+        
+        .main-cover { 
+            background-color: rgba($black, 0.8); 
+            overflow: hidden !important;
+
+            .card-title {
+                font-size: 1.25em;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+
+            .card-text {
+                font-size: 0.9em;
+                text-align: justify;
+            }
+
+            h2 {
+                position: absolute;
+                bottom: 0; left: 0;
+                font-size: 2em;
+            }
+
+            button {
+                position: absolute;
+                bottom: 0; right: 0;
+                border-radius: 50%;
+                @include transition-to-all-25;
+
+                &:hover {
+                    background-color: $gray-900;
+                    border: 0.5rem solid $gray-900;
+                }
+
+                &:active { border: 1px solid $gray-900 !important; }
+            }
+        }
+
+        .cover {
+            p, i {
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                text-transform: capitalize;
+                @include transition-to-all-25;
+            }
+
+            i {
+                font-size: 5em;
+                opacity: 0;
+            }
+
+            @include transition-to-all-25;
+
+            &:hover { 
+                background-color: rgba($black, 0.75); 
+                p { opacity: 1; }
+                i { opacity: 0.25; }
+            }
+            
+            &:active { background-color: rgba($black, 0.3); }
+        }
+    }    
+
+}
+
+// coffee button display section
+.cart-btn {
+    position: fixed;
+    bottom: 0; right: 0;
+    border-radius: 2rem !important;
+    @include transition-to-all-25;
+    z-index: 1020;
+
+    &:hover { background-color: $gray-900; border: 1px solid $gray-900; }
+    &:active { background-color: $gray-800; }
+}

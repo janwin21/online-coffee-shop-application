@@ -1,0 +1,17 @@
+// import costumize containing all bootstrap snippets
+@use "costumize";
+
+// import all necessarry snippets
+@use "./components/footer";
+@use "./components/mixins";
+@use "./components/navbar";
+@use "./components/typography";
+
+// import all components from home directory
+@use "./pages/home/header";
+@use "./pages/home/restaurant";
+
+// import all components from drinks directory
+@use "./pages/drinks/coffee-header";
+@use "./pages/drinks/coffee-shop";
+@use "./pages/drinks/coffee-buy";
