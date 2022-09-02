@@ -11413,4 +11413,21 @@ button {
   }
 }
 
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+.queue-header object {
+  width: 125px;
+  animation: jump 1s linear infinite alternate !important;
+}
+
+.queue-collection {
+  border-top: 1px solid #90604C;
+}
+
 /*# sourceMappingURL=style.css.map */

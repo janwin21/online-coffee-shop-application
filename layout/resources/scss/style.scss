@@ -15,3 +15,6 @@
 @use "./pages/drinks/coffee-header";
 @use "./pages/drinks/coffee-shop";
 @use "./pages/drinks/coffee-buy";
+
+// import all components from queue  directory
+@use "./pages/queue/queue-header";

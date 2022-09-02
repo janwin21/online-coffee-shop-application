@@ -1,0 +1,19 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+// queue header section
+@include jump;
+.queue-header {
+
+    object {
+        width: 125px;
+        animation: jump 1s linear infinite alternate !important;
+    }
+
+}
+
+// queue collection
+.queue-collection {
+    border-top: 1px solid $primary;
+}

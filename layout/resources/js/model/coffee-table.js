@@ -54,11 +54,10 @@ function CoffeeTable(table, amount, serviceBtn) {
         this.serviceBtn.on('click', event => {
             if(this.total != 0) {
                 console.log(event.currentTarget.dataset.service);
-                /*
+                
                 this.map.forEach((value, key) => {
                     console.log('key: ', key, 'value: ', value);
                 });
-                */
             } else event.preventDefault();
         });
 
