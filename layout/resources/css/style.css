@@ -10861,6 +10861,15 @@ footer .powered i:active, footer .copyright i:active {
     display: none !important;
   }
 }
+.navbar strong {
+  transition: all 0.25s ease-out;
+}
+.navbar strong:hover {
+  color: #90604C !important;
+}
+.navbar strong:active {
+  color: #E1D3B6 !important;
+}
 
 .open-sans {
   font-family: "Open Sans", sans-serif;
@@ -11088,11 +11097,15 @@ button {
   border-bottom: none;
   height: 350px;
 }
-.coffee-header .card .cover, .coffee-header .card .card-img-top, .coffee-header .card .card-body {
+.coffee-header .card .cover, .coffee-header .card .card-img-top, .coffee-header .card .card-body, .coffee-header .card .animated-cover {
   position: absolute;
   bottom: 0;
   left: 0;
   border-radius: 0px;
+}
+.coffee-header .card .animated-cover {
+  background-color: #000;
+  z-index: 1015 !important;
 }
 .coffee-header .card .cover {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
@@ -11106,6 +11119,7 @@ button {
 .coffee-header .card .card-body .card-title {
   font-size: 3em;
   text-shadow: 1px 1px 3px #495057;
+  text-transform: capitalize;
 }
 .coffee-header .card .card-body .card-text {
   font-size: 1em;
@@ -11143,16 +11157,19 @@ button {
   background-color: rgba(144, 96, 76, 0.4);
   transition: all 0.25s ease-out;
 }
-.coffee-header .card .coffee-description .hoverable {
-  opacity: 0;
-  transition: all 0.25s ease-out;
-}
 .coffee-header .card .coffee-description h1 {
   font-size: 2.5em;
 }
 .coffee-header .card .coffee-description h1 strong {
   font-size: 0.5em !important;
   font-weight: 500 !important;
+}
+.coffee-header .card .coffee-description .card-text {
+  text-transform: capitalize;
+}
+.coffee-header .card .coffee-description .hoverable {
+  opacity: 0;
+  transition: all 0.25s ease-out;
 }
 @media (max-width: 991.98px) {
   .coffee-header .card .coffee-description {
@@ -11309,6 +11326,17 @@ button {
   border-top: 1px solid #E1D3B6;
 }
 
+.short-form .form-control {
+  border: none !important;
+}
+.short-form .form-control strong {
+  color: #dc3545 !important;
+}
+.short-form .form-control input:focus {
+  outline: none !important;
+  border: 2px solid #90604C !important;
+}
+
 .coffee-buy-table tr:first-child {
   background-color: #7B7167;
   border-top-left-radius: 1rem;
@@ -11317,6 +11345,13 @@ button {
 .coffee-buy-table th, .coffee-buy-table td {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.coffee-buy-table th input[type=text], .coffee-buy-table td input[type=text] {
+  background-color: transparent !important;
+  color: #212529;
+  font-weight: 500;
+  border: none;
+  width: 100%;
 }
 .coffee-buy-table th .plus, .coffee-buy-table td .plus {
   background-color: #20c997 !important;

@@ -15,10 +15,15 @@
         border-bottom: none;
         height: 350px;
 
-        .cover, .card-img-top, .card-body {
+        .cover, .card-img-top, .card-body, .animated-cover {
             position: absolute;
             bottom: 0; left: 0;
             border-radius: 0px;
+        }
+
+        .animated-cover {
+            background-color: $black;
+            z-index: 1015 !important;
         }
 
         .cover { background-image: $light-gradient-yy; }
@@ -30,6 +35,7 @@
             .card-title {
                 font-size: 3em;
                 text-shadow: 1px 1px 3px $gray-700;
+                text-transform: capitalize;
             }
 
             .card-text { font-size: 1em; }
@@ -57,16 +63,16 @@
             width: 25%;
             background-color: rgba($color: $primary, $alpha: 0.4);
             @include transition-to-all-25;
-            .hoverable { opacity: 0; @include transition-to-all-25; }
 
-            h1 {
-                font-size: 2.5em;
-
+            h1 { font-size: 2.5em;
                 strong {
                     font-size: 0.5em !important;
                     font-weight: 500 !important;
                 }
             }
+
+            .card-text { text-transform: capitalize; }
+            .hoverable { opacity: 0; @include transition-to-all-25; }
   
             @include media-breakpoint-down(lg) { display: none !important; }
         }

@@ -19,4 +19,10 @@
         color: $gray-900;
         text-shadow: 0 0 1px $gray-500;
     }
+
+    strong {
+        @include transition-to-all-25;
+        &:hover { color: $primary !important; }
+        &:active { color: $secondary !important; }
+    }
 }

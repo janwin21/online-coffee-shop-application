@@ -26,4 +26,5 @@
         animation: jump 1s linear infinite alternate !important;
         @include media-breakpoint-down(lg) { display: none !important; }
     }
+    
 }

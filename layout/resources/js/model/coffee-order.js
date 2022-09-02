@@ -32,7 +32,7 @@ function CoffeeOrder(settings, parent) {
     `;
 
     this.container = `
-        <h1 class="coffee-shop-type open-sans roboto bg-dark text-light w-50 px-5 py-2">{{ coffee-type }}</h1>
+        <h1 class="coffee-shop-type open-sans roboto bg-dark text-light w-50 px-5 py-2" id="{{ coffee-type-id }}">{{ coffee-type }}</h1>
 
         <div class="coffee-item-collection mx-0 my-4 row">
             <!-- First Card Description Design -->
@@ -73,6 +73,7 @@ function CoffeeOrder(settings, parent) {
 
             containerText += this.container
                                 .replace('{{ item-collection }}', coffeeItemText)
+                                .replace('{{ coffee-type-id }}', setting.coffeeType.replace(' ', '-'))
                                 .replaceAll('{{ coffee-type }}', setting.coffeeType)
                                 .replace('{{ description }}', descriptionText);
 
@@ -109,7 +110,10 @@ function CoffeeOrder(settings, parent) {
     this.getIndex = () => { return this.index };
     this.getAvailable = () => { return this.available };
 
-    // connect this Coffee Order to Coffee Table model
+    // connect this Coffee Header to Coffee Order model
+    this.addCoffeeHeader = coffeeHeader => { this.coffeeHeader = coffeeHeader; return this; };
+
+    // connect this Coffee Table to Coffee Order model
     this.addCoffeeTable = coffeeTable => { this.coffeeTable = coffeeTable; return this; };
 
     this.addItem = (event, isIncrement, remainingQuantity) => {
@@ -171,6 +175,7 @@ function CoffeeOrder(settings, parent) {
 
             // display the total value
             this.coffeeTable.displayAmount(this.map);
+            this.coffeeHeader.setSettings(this.settings);
         }
     };
 

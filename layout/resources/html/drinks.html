@@ -24,6 +24,7 @@
 
     <!-- JS Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- JQuery CDN -->
+    <script src="../js/model/coffee-header.js"></script><!-- Coffee Header Model -->
     <script src="../js/model/coffee-order.js"></script><!-- Coffee Order Model -->
     <script src="../js/model/coffee-table.js"></script><!-- Coffee Table Model -->
     <script src="../js/pages/drinks.js"></script><!-- Drinks Page -->
@@ -44,17 +45,14 @@
                 <li class="nav-item"><a class="nav-link open-sans ms-2 active" href="./drinks.html">
                     Drinks
                 </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="#benefits">
-                    Benefits
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="#coffee-detail">
-                    Restaurants
-                </a></li>
                 <li class="nav-item"><a class="nav-link open-sans ms-2" href="./costumers.html">
-                    Costumers
+                    Queue
                 </a></li>
                 <li class="nav-item"><a class="nav-link open-sans ms-2" href="./about.html">
                     About Us
+                </a></li>
+                <li class="nav-item login"><a class="nav-link open-sans ms-2" href="#">
+                    <strong>Login</strong>
                 </a></li>
             </ul>
         </div>
@@ -80,9 +78,13 @@
                     <p class="card-text text-secondary me-4 mt-5 mb-0 w-100 text-end open-sans">Price</p>
                     <h1 class="card-text text-light mt-0 w-100 text-end open-sans"><strong class="me-1">&#8369;</strong>89.99</h1>
                 </div>
+                <!-- Animated Cover -->
+                <div class="animated-cover w-100 h-100"></div>
             </div>
         </div>
     </header>
+
+    <!--  -->
 
     <!-- Coffee Shop Display -->
     <div class="coffee-shop container my-5">
@@ -120,6 +122,22 @@
             <p class="open-sans text-light py-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, consequatur molestiae! Rem recusandae porro nostrum, optio illo dolorem fugiat nobis corrupti culpa fugit iste vel adipisci quibusdam distinctio blanditiis sapiente.</p>
         </div>
     </div>
+
+    <form action="#">
+
+    <!-- Short Form -->
+    <div class="short-form container mt-5">
+        <div class="row">
+            <div class="col-4"><div class="form-control">
+                <label class="text-dark mb-2" for="surname">Surname <strong>*</strong></label>
+                <input class="d-block w-100 px-2 py-1" type="text" name="surname" placeholder="surname..." required>
+            </div></div>
+            <div class="col-2"><div class="form-control">
+                <label class="text-dark mb-2" for="table-number">Table # <strong>*</strong></label>
+                <input class="d-block w-100 px-2 py-1" type="number" name="table-number" min="1" required>
+            </div></div>
+        </div>
+    </div>
     
     <!-- Buy Display Table -->
     <div class="coffee-buy-table container p-0 my-5">
@@ -135,9 +153,15 @@
                 <th class="col open-sans text-light d-flex align-items-center"></th>
             </tr>
             <tr class="row px-4 my-0">
-                <td class="col open-sans d-flex align-items-center px-2 mx-0"><strong>coffee name</strong></td>
-                <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">coffee type 1</td>
-                <td class="col open-sans d-flex align-items-center px-2 mx-0">2</td>
+                <td class="col open-sans d-flex align-items-center px-2 mx-0">
+                    <input type="text" name="coffee-name" value="coffee name" disabled>
+                </td>
+                <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">
+                    <input type="text" name="coffee-type" value="coffee type 1" disabled>
+                </td>
+                <td class="col open-sans d-flex align-items-center px-2 mx-0">
+                    <input type="text" name="quantity" value="2" disabled>
+                </td>
                 <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">&#8369;89.99</td>
                 <td class="col open-sans d-flex align-items-center px-2 mx-0">&#8369;89.99 * 2</td>
                 <td class="col open-sans row d-flex align-items-center px-2 mx-0">
@@ -162,11 +186,14 @@
             </div>
             <div class="buy w-100 d-flex justify-content-end mt-5">
                 <p class="text-dark d-flex align-items-center h-100 open-sans note">Once click, your order will proceed to process</p>
-                <button class="btn btn-primary take-out shadow-none px-4 ms-4 open-sans" data-service="take out">Take out</button>
-                <button class="btn btn-primary dine-in shadow-none px-4 ms-2 open-sans" data-service="dine in">Dine in</button>
+                <!-- create a routes to determine if it is take-out or dine-in -->
+                <button type="submit" class="btn btn-primary take-out shadow-none px-4 ms-4 open-sans" data-service="take out">Take out</button>
+                <button type="submit" class="btn btn-primary dine-in shadow-none px-4 ms-2 open-sans" data-service="dine in">Dine in</button>
             </div>
         </div>
     </div>
+
+    </form>
 
     <!-- Footer -->
     <footer class="container-fluid bg-primary">
@@ -262,5 +289,59 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // drink js
+        const settings = [
+            {
+                coffeeType: 'hot coffee',
+                selectedIndex: 0,
+                data: [
+                    { 
+                        name: 'cuban coffee',
+                        mini: 'Type of espresso that originated in Cuba...',
+                        description: 'A sweet espresso drink made with strong, dark roast espresso sweetened with a thick sugar foam. It\'s the most delicious coffee beverage of all time!',
+                        available: 24,
+                        price: 60.99
+                    },
+                    { 
+                        name: 'french cafe au lait',
+                        available: 4,
+                        price: 99.99
+                    },
+                    { 
+                        name: 'the perfect cappuccino',
+                        mini: 'A temperature of 150 degrees Fahrenheit is perfect!',
+                        description: 'That\'s where the milk is hot to the touch but not simmering. Then froth using your desired method to froth the milk until it\'s very foamy.',
+                        available: 20,
+                        price: 88.99
+                    }
+                ]
+            },
+            {
+                coffeeType: 'cold coffee',
+                selectedIndex: 0,
+                data: [
+                    { 
+                        name: 'affogato',
+                        available: 10,
+                        price: 79.99
+                    },
+                    { 
+                        name: 'maple pecan latte',
+                        mini: 'The traditional maple pecan latte uses espresso',
+                        description: 'Like the sweet aroma of Autumn, the latte is a warm blend of coffee and steamed milk with notes of maple and pecan topped with whipped cream and more pecans.',
+                        available: 12,
+                        price: 23.5
+                    },
+                    { 
+                        name: 'white chocolate mocha',
+                        available: 5,
+                        price: 86.00
+                    }
+                ]
+            }
+        ];
+    </script>
 </body>
 </html>

@@ -20,12 +20,18 @@ function CoffeeTable(table, amount, serviceBtn) {
 
     this.coffeeRow = `<!-- Coffee Row Format -->
         <tr class="row px-4 my-0">
-            <td class="col open-sans d-flex align-items-center px-2 mx-0"><strong>{{ coffee-name }}</strong></td>
-            <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">{{ coffee-type }}</td>
-            <td class="col open-sans d-flex align-items-center px-2 mx-0">{{ quantity }}</td>
-            <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">&#8369;{{ price }}</td>
-            <td class="col open-sans d-flex align-items-center px-2 mx-0">&#8369;{{ amount }}</td>
-            <td class="col open-sans row d-flex align-items-center px-2 mx-0">
+            <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0">
+                <input type="text" name="coffee-name-{{ index }}" value="{{ coffee-name }}" disabled>
+            </td>
+            <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0 deletable">
+                <input type="text" name="coffee-type-{{ index }}" value="{{ coffee-type }}" disabled>
+            </td>
+            <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0">
+                <input type="text" name="quantity-{{ index }}" value="{{ quantity }}" disabled>
+            </td>
+            <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0 deletable">&#8369;{{ price }}</td>
+            <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0">&#8369;{{ amount }}</td>
+            <td class="col open-sans row d-flex align-items-center px-2 pt-0 mx-0">
                 <div class="col-md-12 col-xl-6 px-0">
                     <button class="btn btn-danger shadow-none open-sans buy-delete" data-name="{{ coffee-name }}" data-index="{{ index }}" data-main-index="{{ mainIndex }}">Delete</button>
                 </div>
@@ -47,10 +53,13 @@ function CoffeeTable(table, amount, serviceBtn) {
 
         this.serviceBtn.on('click', event => {
             if(this.total != 0) {
+                console.log(event.currentTarget.dataset.service);
+                /*
                 this.map.forEach((value, key) => {
                     console.log('key: ', key, 'value: ', value);
                 });
-            }
+                */
+            } else event.preventDefault();
         });
 
         return this;

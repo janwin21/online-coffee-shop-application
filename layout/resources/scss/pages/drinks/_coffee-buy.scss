@@ -29,6 +29,22 @@
 
 }
 
+// short form
+.short-form {
+
+    .form-control {
+        border: none !important;
+        strong { color: $red !important; } 
+        input {
+            &:focus {
+                outline: none !important;
+                border: 2px solid $primary !important;
+            }
+        }
+    }
+
+}
+
 // coffee buy table section
 .coffee-buy-table {
 
@@ -42,6 +58,14 @@
         // border: 1px solid $black;
         padding-top: 1rem;
         padding-bottom: 1rem;
+
+        input[type=text] {
+            background-color: transparent !important;
+            color: $gray-900;
+            font-weight: 500;
+            border: none;
+            width: 100%;
+        }
 
         .plus { 
             background-color: $teal !important; 
