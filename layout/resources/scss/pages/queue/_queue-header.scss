@@ -11,9 +11,65 @@
         animation: jump 1s linear infinite alternate !important;
     }
 
+    button {
+        &:hover {
+            background-color: $gray-900 !important;
+            border: 1px solid $gray-900 !important;
+        }
+
+        &:active {
+            background-color: $primary !important;
+            border: 1px solid $primary !important;
+        }
+    }
+
 }
 
 // queue collection
 .queue-collection {
+    position: relative;
     border-top: 1px solid $primary;
+
+    .card {
+        border: 1px solid transparent !important;
+        height: fit-content !important;
+
+        .card-body {
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 1016;
+
+            .img { object-fit: cover !important; }
+            .card-title { font-size: 1em; }
+
+            div { 
+                overflow-y: auto !important;
+                th, td { font-size: 0.9em; }
+            }
+
+            a { 
+                position: absolute;
+                bottom: 0; left: 0;
+                background-color: $red !important; 
+                border: 1px solid $red;
+
+                &:hover {
+                    background-color: $gray-900 !important;
+                    border: 1px solid $gray-900 !important;
+                }
+
+                &:active {
+                    background-color: $red !important;
+                    border: 1px solid $red !important;
+                }
+            }
+        }
+
+        .cover {
+            position: absolute;
+            top: 0; left: 0;
+            background-color: rgba($black, 0.1);
+        }
+
+    }
 }

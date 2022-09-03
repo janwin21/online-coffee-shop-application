@@ -11425,9 +11425,61 @@ button {
   width: 125px;
   animation: jump 1s linear infinite alternate !important;
 }
+.queue-header button:hover {
+  background-color: #212529 !important;
+  border: 1px solid #212529 !important;
+}
+.queue-header button:active {
+  background-color: #90604C !important;
+  border: 1px solid #90604C !important;
+}
 
 .queue-collection {
+  position: relative;
   border-top: 1px solid #90604C;
+}
+.queue-collection .card {
+  border: 1px solid transparent !important;
+  height: fit-content !important;
+}
+.queue-collection .card .card-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1016;
+}
+.queue-collection .card .card-body .img {
+  object-fit: cover !important;
+}
+.queue-collection .card .card-body .card-title {
+  font-size: 1em;
+}
+.queue-collection .card .card-body div {
+  overflow-y: auto !important;
+}
+.queue-collection .card .card-body div th, .queue-collection .card .card-body div td {
+  font-size: 0.9em;
+}
+.queue-collection .card .card-body a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #dc3545 !important;
+  border: 1px solid #dc3545;
+}
+.queue-collection .card .card-body a:hover {
+  background-color: #212529 !important;
+  border: 1px solid #212529 !important;
+}
+.queue-collection .card .card-body a:active {
+  background-color: #dc3545 !important;
+  border: 1px solid #dc3545 !important;
+}
+.queue-collection .card .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -24,6 +24,7 @@
 
     <!-- JS Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- JQuery CDN -->
+    <script src="../js/pages/queue.js"></script><!-- Queue Page -->
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -59,19 +60,50 @@
         <object class="my-5" data="../svg/waiting.svg"></object>
         <h1 class="kaushan-script text-primary">Queue</h1>
         <p class="mb-5">Your order is pending. Please wait for a while until your order is deliver.</p>
-        <button class="open-sans btn btn-primary shadow-none">Check your Line</button>
+        <button class="open-sans btn btn-primary shadow-none" data-nav="table-1">Check your Line</button>
     </div>
     
     <!-- Queue Collection -->
     <div class="queue-collection container text-center my-5 pt-5">
         <div class="row">
             <div class="col-3 p-3">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card" id="table-1">
+                    <img class="card-img-top w-100" src="../images/items/jpg/notes.jpg" alt="...">
+                    <div class="cover w-100 h-100"></div>
+                    <div class="card-body text-start w-100 h-100">
+                        <h5 class="card-title roboto mb-2">T1 Username</h5>
+                        <div class="w-100 h-75 mt-3 p-0">
+                            <table class="m-0 p-0 w-100">
+                                <tr class="row m-0 p-0">
+                                    <th class="col-2 m-0 p-0 open-sans">Pcs</th>
+                                    <th class="col-5 m-0 p-0 open-sans">Name</th>
+                                    <th class="col-5 m-0 p-0 open-sans text-end">Amount</th>
+                                </tr>
+                                
+                                <tr class="row m-0 p-0">
+                                    <td class="col-2 m-0 p-0 open-sans">1</td>
+                                    <td class="col-5 m-0 p-0 open-sans">coffee_name</td>
+                                    <td class="col-5 m-0 p-0 open-sans text-end">$1000</td>
+                                </tr>
+                                <tr class="row m-0 p-0">
+                                    <td class="col-2 m-0 p-0 open-sans">1</td>
+                                    <td class="col-5 m-0 p-0 open-sans">coffee_name</td>
+                                    <td class="col-5 m-0 p-0 open-sans text-end">$1000</td>
+                                </tr>
+                                <tr class="row m-0 p-0">
+                                    <td class="col-2 m-0 p-0 open-sans">1</td>
+                                    <td class="col-5 m-0 p-0 open-sans">coffee_name</td>
+                                    <td class="col-5 m-0 p-0 open-sans text-end">$1000</td>
+                                </tr>
+                                
+                                <tr class="row m-0 p-0 mt-4">
+                                    <td class="col-2 m-0 p-0 open-sans"></td>
+                                    <td class="col-5 m-0 p-0 open-sans"><strong>Total</strong></td>
+                                    <td class="col-5 m-0 p-0 open-sans text-end"><strong>$1000</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-primary px-4 py-1 shadow-none m-3">Cancel</a>
                     </div>
                 </div>
             </div>
