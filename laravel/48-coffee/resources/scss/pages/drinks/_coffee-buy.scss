@@ -1,0 +1,138 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+// coffee buy header section
+@include jump; @include pulse;
+.coffee-buy {
+    background-color: $gray-900;
+
+    object {
+        width: 125px;
+        animation: jump 1s linear infinite alternate !important;
+    }
+
+    h4 {
+        position: relative;
+        font-size: 1.5em;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1.25rem;
+            width: 40%;
+            left: 30%;
+            border-top: 1px solid $secondary;
+        }
+    }
+
+}
+
+// short form
+.short-form {
+
+    .form-control {
+        border: none !important;
+        strong { color: $red !important; } 
+        input {
+            &:focus {
+                outline: none !important;
+                border: 2px solid $primary !important;
+            }
+        }
+    }
+
+}
+
+// coffee buy table section
+.coffee-buy-table {
+
+    tr:first-child {
+        background-color: #7B7167;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    th, td {
+        // border: 1px solid $black;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        input[type=text] {
+            background-color: transparent !important;
+            color: $gray-900;
+            font-weight: 500;
+            border: none;
+            width: 100%;
+        }
+
+        .plus { 
+            background-color: $teal !important; 
+            border: 1px solid $teal !important;
+        }
+
+        .btn-danger {
+            @include transition-to-all-25;
+
+            &:hover { 
+                background-color: $gray-900 !important; 
+                border: 1px solid $gray-900 !important;
+            }
+
+            &:active { 
+                background-color: $gray-600 !important; 
+                border: 1px solid $gray-600 !important;
+            }
+        }
+  
+        @include media-breakpoint-down(xl) { 
+            .buy-delete, .plus, .minus { 
+                width: 100% !important; 
+                border-radius: 0px !important;
+            }
+        }
+    }
+    
+    @include media-breakpoint-down(md) {
+        .buy-delete { display: none !important; }
+        .deletable { display: none !important; }
+    } 
+
+    .buy-drinks {
+        .buy {
+            height: 2.5rem !important;
+            p { animation: pulse 1s linear infinite alternate !important; }
+        }
+
+        .take-out {
+            background-color: $teal !important; 
+            border: 1px solid $teal !important;
+        }
+
+        .dine-in {
+            background-color: $info !important; 
+            border: 1px solid $info !important;
+        }
+
+        .btn-primary {
+            @include transition-to-all-25;
+
+            &:hover { 
+                background-color: $gray-900 !important; 
+                border: 1px solid $gray-900 !important;
+            }
+
+            &:active { 
+                background-color: $gray-600 !important; 
+                border: 1px solid $gray-600 !important;
+            }
+        }
+    
+        @include media-breakpoint-down(sm) {
+            .note { display: none !important; }
+        } 
+
+    }
+
+}
