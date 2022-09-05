@@ -16,5 +16,8 @@
 @use "./pages/drinks/coffee-shop";
 @use "./pages/drinks/coffee-buy";
 
-// import all components from queue  directory
+// import all components from queue directory
 @use "./pages/queue/queue-header";
+
+// import all components from authentication directory
+@use "./pages/authentications/login";

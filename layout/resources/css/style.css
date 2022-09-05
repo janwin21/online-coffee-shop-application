@@ -11482,4 +11482,100 @@ button {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+.login-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1020 !important;
+  height: 100vh;
+  background-color: #90604C !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.login-fixed .header img {
+  width: 9em !important;
+}
+.login-fixed .header h2 {
+  font-size: 3.5em !important;
+  color: #fff;
+  padding-top: 0 !important;
+}
+.login-fixed .header p {
+  color: #E9E6E1 !important;
+}
+.login-fixed .header .form-control {
+  background-color: transparent !important;
+  border: none !important;
+}
+.login-fixed .header .form-control label {
+  color: #E1D3B6 !important;
+  font-size: 0.95em !important;
+}
+.login-fixed .header .form-control input {
+  outline: none !important;
+}
+.login-fixed .header .form-control input:focus {
+  border: 2px solid #E9E6E1 !important;
+}
+.login-fixed .header .login {
+  background-color: #fff !important;
+  border: 1px #fff !important;
+  transition: all 0.25s ease-out;
+}
+.login-fixed .header .login:hover {
+  background-color: #af5a06 !important;
+  border: 1px #af5a06 !important;
+  color: #fff !important;
+}
+.login-fixed .header .login:active {
+  background-color: #fff !important;
+}
+.login-fixed .header .register {
+  background-color: #198754 !important;
+  border: 1px #198754 !important;
+  transition: all 0.25s ease-out;
+}
+.login-fixed .header .register:hover {
+  background-color: #fff !important;
+  border: 1px #fff !important;
+  color: #198754 !important;
+}
+.login-fixed .header .register:active {
+  background-color: #198754 !important;
+}
+
+.register-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 8rem !important;
+  padding-left: 6rem !important;
+  padding-right: 6rem !important;
+}
+.register-fixed .register-header {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+.register-fixed .register-header object {
+  width: 175px;
+  animation: jump 1s linear infinite alternate !important;
+}
+.register-fixed .register-header h3 {
+  font-size: 1.5em !important;
+}
+.register-fixed .register-header p {
+  font-size: 0.9em !important;
+}
+
 /*# sourceMappingURL=style.css.map */

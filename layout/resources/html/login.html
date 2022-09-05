@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48 Coffee Shop</title>
+
+    <!-- Google Fonts Connect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- List of Font Families -->
+    <!-- 'Open Sans', sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- 'Kaushan Script', cursive -->
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <!-- 'Roboto', sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/fontawesome.css" media="screen">
+
+    <!-- JS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- JQuery CDN -->
+    <script src="../js/pages/authentication.js"></script><!-- Authentication Page -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-2 sticky-top">
+        <div class="container">
+
+            <!-- Navbar Brand -->
+            <a class="navbar-brand kaushan-script" href="#">48 Coffee</a>
+
+            <!-- Navbar Nav -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+                <li class="nav-item"><a class="nav-link open-sans ms-2" aria-current="page" href="#">
+                    Home
+                </a></li>
+                <li class="nav-item"><a class="nav-link open-sans ms-2" href="./drinks.html">
+                    Drinks
+                </a></li>
+                <li class="nav-item"><a class="nav-link open-sans ms-2 active" href="./costumers.html">
+                    Queue
+                </a></li>
+                <li class="nav-item"><a class="nav-link open-sans ms-2" href="./about.html">
+                    About Us
+                </a></li>
+                <li class="nav-item login"><a class="nav-link open-sans ms-2" href="#">
+                    <strong>Login</strong>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar Header Fixed -->
+    <div class="row">
+        <div class="login-fixed p-4 col-4">
+            <div class="header container">
+                <div class="align-items-center text-center pt-5">
+                    <h2 class="kaushan-script mt-5 mb-4 pt-0 text-start">Coffee Shop</h2>
+                    <p class="open-sans mt-4 mb-5 pt-2 text-start">Login for drinks delivery and employee service. Enjoy using our application &#128513;</p>
+                </div>
+                <form action="#" method="POST">
+                    <div class="form-control m-0 p-0">
+                        <label class="d-block roboto" for="username">Username</label>
+                        <input class="mt-1 p-1 w-75" type="text" placeholder="enter username" name="username">
+                    </div>
+                    <div class="form-control m-0 p-0 mt-3">
+                        <label class="d-block roboto" for="password">Password</label>
+                        <input class="mt-1 p-1 mb-4 w-75" type="password" name="password">
+                    </div>
+                    <button class="btn btn-light login shadow-none px-4 py-1 me-2" type="submit">Login</button>
+                    <button class="btn btn-secondary register text-light shadow-none px-4 py-1" type="button">Register</button>
+                </form>
+            </div>
+        </div>
+        <div class="register-fixed pt-5 px-5 col-8">
+            <div class="register-header container mt-5 pb-4 bg-primary text-center">
+                <!-- Personal Information -->
+                <object class="my-5" data="../svg/personal.svg"></object>
+                <h3 class="text-light open-sans">Your Personal Information</h3>
+                <p class="text-light open-sans">Fill-up all the necessary for delivery information purposes.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

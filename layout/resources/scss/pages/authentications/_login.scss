@@ -1,0 +1,99 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+@include jump;
+
+// login section
+.login-fixed {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1020 !important;
+    height: 100vh; 
+    background-color: $primary !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .header {
+        img {
+            width: 9em !important;
+        }
+
+        h2 {
+            font-size: 3.5em !important;
+            color: $white;
+            padding-top: 0 !important;
+        }
+
+        p { color: $dirty-white !important; }
+
+        .form-control {
+            background-color: transparent !important;
+            border: none !important;
+
+            label {
+                color: $secondary !important;
+                font-size: 0.95em !important;
+            }
+
+            input { outline: none !important; 
+                &:focus { border: 2px solid $dirty-white !important; }
+            }
+        }
+
+        .login {
+            background-color: $white !important;
+            border: 1px $white !important;
+            @include transition-to-all-25;
+
+            &:hover {
+                background-color: $dark-orange !important;
+                border: 1px $dark-orange !important;
+                color: $white !important;
+            }
+
+            &:active { background-color: $white !important; }
+        }
+
+        .register {
+            background-color: $green !important;
+            border: 1px $green !important;
+            @include transition-to-all-25;
+
+            &:hover {
+                background-color: $white !important;
+                border: 1px $white !important;
+                color: $green !important;
+            }
+
+            &:active { background-color: $green !important; }
+        }
+    }
+}
+
+// register section
+.register-fixed {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 8rem !important;
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+
+    $object-width: 175px;
+
+    .register-header {
+        border-top-left-radius: 1rem !important;
+        border-top-right-radius: 1rem !important;
+
+        object { 
+            width: $object-width; 
+            animation: jump 1s linear infinite alternate !important;
+        }
+
+        h3 { font-size: 1.5em !important; }
+        p { font-size: 0.9em !important; }
+    }
+}
