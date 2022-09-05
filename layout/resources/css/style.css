@@ -10895,6 +10895,26 @@ button {
   display: none !important;
 }
 
+.excellent {
+  background-color: #6f42c1 !important;
+}
+
+.well-done {
+  background-color: #198754 !important;
+}
+
+.good {
+  background-color: #0d6efd !important;
+}
+
+.its-ok {
+  background-color: #495057 !important;
+}
+
+.poor {
+  background-color: #dc3545 !important;
+}
+
 @keyframes pulse {
   0% {
     opacity: 0.25;
@@ -11496,9 +11516,11 @@ button {
   left: 0;
   z-index: 1020 !important;
   height: 100vh;
-  background-color: #90604C !important;
+  background-color: #212529 !important;
   overflow-y: auto;
   overflow-x: hidden;
+  box-shadow: 0px 2px 6px #000;
+  transition: all 0.25s ease-out;
 }
 .login-fixed .header img {
   width: 9em !important;
@@ -11510,6 +11532,10 @@ button {
 }
 .login-fixed .header p {
   color: #E9E6E1 !important;
+}
+.login-fixed .header button {
+  font-size: 0.9em !important;
+  font-weight: 500;
 }
 .login-fixed .header .form-control {
   background-color: transparent !important;
@@ -11525,34 +11551,52 @@ button {
 .login-fixed .header .form-control input:focus {
   border: 2px solid #E9E6E1 !important;
 }
-.login-fixed .header .login {
+.login-fixed .header .login-btn {
   background-color: #fff !important;
   border: 1px #fff !important;
   transition: all 0.25s ease-out;
 }
-.login-fixed .header .login:hover {
+.login-fixed .header .login-btn:hover {
   background-color: #af5a06 !important;
   border: 1px #af5a06 !important;
   color: #fff !important;
 }
-.login-fixed .header .login:active {
+.login-fixed .header .login-btn:active {
   background-color: #fff !important;
 }
-.login-fixed .header .register {
+.login-fixed .header .register-btn {
   background-color: #198754 !important;
   border: 1px #198754 !important;
   transition: all 0.25s ease-out;
 }
-.login-fixed .header .register:hover {
+.login-fixed .header .register-btn:hover {
   background-color: #fff !important;
   border: 1px #fff !important;
   color: #198754 !important;
 }
-.login-fixed .header .register:active {
+.login-fixed .header .register-btn:active {
   background-color: #198754 !important;
+}
+.login-fixed .header .feedback-left {
+  display: none;
+}
+.login-fixed .header .feedback-left .bg-feedback {
+  background-color: #212529 !important;
+  border-radius: 6px !important;
+}
+.login-fixed .header .feedback-left .bg-feedback h5 {
+  font-size: 1.05em !important;
+}
+.login-fixed .header .feedback-left .bg-feedback .description {
+  font-size: 0.9em !important;
+}
+
+.primary {
+  background-color: #90604C !important;
 }
 
 .register-fixed {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -11562,8 +11606,30 @@ button {
   padding-top: 8rem !important;
   padding-left: 6rem !important;
   padding-right: 6rem !important;
+  z-index: 1010 !important;
+}
+.register-fixed .register-header, .register-fixed .register-content {
+  border: 1px solid #90604C !important;
 }
 .register-fixed .register-header {
+  position: relative;
+}
+.register-fixed .register-header .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 1.75em !important;
+  transition: all 0.25s ease-out;
+}
+.register-fixed .register-header .close-btn:hover {
+  font-size: 2em !important;
+}
+.register-fixed .register-header .close-btn:active {
+  font-size: 1.75em !important;
+}
+.register-fixed .register-header:first-child {
   border-top-left-radius: 1rem !important;
   border-top-right-radius: 1rem !important;
 }
@@ -11576,6 +11642,82 @@ button {
 }
 .register-fixed .register-header p {
   font-size: 0.9em !important;
+}
+.register-fixed .register-content {
+  background-color: #fff !important;
+}
+.register-fixed .register-content .form-control {
+  border-radius: 0px !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+.register-fixed .register-content .form-control label {
+  font-size: 0.95em !important;
+  font-weight: bold !important;
+}
+.register-fixed .register-content .security-note {
+  font-size: 0.9em !important;
+}
+.register-fixed .register-content #employee-btn {
+  background-color: #fd7e14 !important;
+  border: 1px solid #fd7e14 !important;
+}
+.register-fixed .register-content #costumer-btn {
+  background-color: #198754 !important;
+  border: 1px solid #198754 !important;
+}
+.register-fixed footer {
+  height: 5em !important;
+  border: 1px solid #90604C !important;
+}
+
+.card {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  border: none !important;
+  z-index: 1000 !important;
+}
+.card img {
+  object-fit: cover !important;
+}
+.card .cover, .card .card-body {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.card .cover {
+  background-color: #212529;
+  opacity: 0.75;
+  transition: all 0.25s ease-out;
+}
+.card .card-body {
+  background-color: transparent !important;
+  overflow-y: auto !important;
+}
+.card .card-body h5 {
+  font-size: 2.15em !important;
+  color: #ffc107 !important;
+  text-shadow: 1px 1px 3px #000 !important;
+}
+.card .card-body .feedback {
+  border-radius: 6px;
+}
+.card .card-body .feedback i {
+  font-size: 0.8em;
+  color: #ffc107 !important;
+}
+.card .card-body .feedback h4 {
+  font-size: 1.25em !important;
+}
+.card .card-body .feedback .rate {
+  color: #ced4da !important;
+  font-weight: 400 !important;
+}
+.card .whiten {
+  background-color: #fff !important;
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=style.css.map */

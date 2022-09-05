@@ -1,0 +1,50 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+// card feedback section
+.card {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh; 
+    border: none !important;
+    z-index: 1000 !important;
+
+    img { object-fit: cover !important; }
+
+    .cover, .card-body {
+        position: absolute;
+        top: 0; right: 0;
+    }
+
+    .cover {
+        background-color: $gray-900;
+        opacity: 0.75;
+        @include transition-to-all-25;
+    }
+
+    .card-body {
+        background-color: transparent !important;
+        overflow-y: auto !important;
+
+        h5 { 
+            font-size: 2.15em !important; 
+            color: $yellow !important; 
+            text-shadow: 1px 1px 3px $black !important;
+        }
+
+        .feedback {
+            border-radius: 6px;
+
+            i { font-size: 0.8em; color: $yellow !important; }
+            h4 { font-size: 1.25em !important; }
+            .rate { color: $gray-400 !important; font-weight: 400 !important; }
+        }
+
+    }
+
+    .whiten { 
+        background-color: $white !important; 
+        opacity: 0.9;
+    }
+}

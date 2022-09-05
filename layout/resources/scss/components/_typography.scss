@@ -15,3 +15,10 @@ button { border-radius: 2px; }
 
 // visibility
 .remove { display: none !important; }
+
+// RATE CSS
+.excellent { background-color: $purple !important; }
+.well-done { background-color: $green !important; }
+.good { background-color: $blue !important; }
+.its-ok { background-color: $gray-700 !important; }
+.poor{ background-color: $red !important; }
