@@ -60,7 +60,7 @@
             button {
                 position: absolute;
                 bottom: 0; right: 0;
-                border-radius: 50%;
+                border-radius: 4px;
                 @include transition-to-all-25;
 
                 &:hover {

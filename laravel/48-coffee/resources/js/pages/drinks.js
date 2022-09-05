@@ -23,11 +23,12 @@ $(document).ready(() => {
     // coffee table
     const coffeeTable = new CoffeeTable(
         $('.coffee-buy-table table'), 
-        $('#amount'), $('.take-out, .dine-in')
-    ).setServiceBtn();
+        $('#amount'), $('#table-size'), 
+        $('#table-service'), $('.take-out, .dine-in')
+    ).setInputs($('#col-names'), $('#col-types'), $('#col-quantities')).setServiceBtn();
 
     // coffee order
-    const coffeeOrder = new CoffeeOrder(settings, parent)
+    new CoffeeOrder(settings, parent)
         .setDetails()
         .addCoffeeHeader(coffeeHeader)
         .addCoffeeTable(coffeeTable)

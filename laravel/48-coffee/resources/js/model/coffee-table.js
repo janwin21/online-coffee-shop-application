@@ -1,9 +1,11 @@
 // Coffee Table Model
 "use strict";
 
-export default function CoffeeTable(table, amount, serviceBtn) {
+export default function CoffeeTable(table, amount, size, service, serviceBtn) {
     this.table = table;
     this.amount = amount;
+    this.size = size;
+    this.service = service;
     this.serviceBtn = serviceBtn;
 
     // templates
@@ -21,13 +23,13 @@ export default function CoffeeTable(table, amount, serviceBtn) {
     this.coffeeRow = `<!-- Coffee Row Format -->
         <tr class="row px-4 my-0">
             <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0">
-                <input type="text" name="coffee-name-{{ index }}" value="{{ coffee-name }}" disabled>
+                <input id="coffee-name" type="text" name="coffee_name_{{ index }}" value="{{ coffee-name }}" disabled>
             </td>
             <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0 deletable">
-                <input type="text" name="coffee-type-{{ index }}" value="{{ coffee-type }}" disabled>
+                <input id="coffee-type" type="text" name="coffee_type_{{ index }}" value="{{ coffee-type }}" disabled>
             </td>
             <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0">
-                <input type="text" name="quantity-{{ index }}" value="{{ quantity }}" disabled>
+                <input id="quantity" type="text" name="quantity_{{ index }}" value="{{ quantity }}" disabled>
             </td>
             <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0 deletable">&#8369;{{ price }}</td>
             <td class="col open-sans d-flex align-items-center px-2 pt-0 mx-0">&#8369;{{ amount }}</td>
@@ -53,11 +55,21 @@ export default function CoffeeTable(table, amount, serviceBtn) {
 
         this.serviceBtn.on('click', event => {
             if(this.total != 0) {
-                console.log(event.currentTarget.dataset.service);
+                console.log(event.currentTarget.dataset.service, this.size.val());
+                this.service.val(event.currentTarget.dataset.service);
+                let nameArr = [], typeArr = [], quantityArr = [];
                 
                 this.map.forEach((value, key) => {
-                    console.log('key: ', key, 'value: ', value);
+                    console.log('key: ', key, 'value: ', value, this.names.val());
+
+                    nameArr.push(key);
+                    typeArr.push(value.coffeeType);
+                    quantityArr.push(value.quantity);
                 });
+                
+                this.names.val(nameArr.join(','));
+                this.types.val(typeArr.join(','));
+                this.quantities.val(quantityArr.join(','));
             } else event.preventDefault();
         });
 
@@ -69,6 +81,14 @@ export default function CoffeeTable(table, amount, serviceBtn) {
         this.map = map;
         this.map.forEach((value, key) => { this.total += value.quantity * value.price; });
         this.amount.html(this.totalTemplate.replace('{{ total }}', this.total.toFixed(2)));
+        this.size.val(this.map.size);
+    };
+
+    this.setInputs = (names, types, quantities) => {
+        this.names = names;
+        this.types = types;
+        this.quantities = quantities;
+        return this;
     };
 
     this.reset = () => { this.total = 0 };

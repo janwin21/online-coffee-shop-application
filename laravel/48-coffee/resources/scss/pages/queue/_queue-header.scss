@@ -45,6 +45,8 @@
             div { 
                 overflow-y: auto !important;
                 th, td { font-size: 0.9em; }
+                .dine-in { color: $green !important; }
+                .take-out { color: $red !important; }
             }
 
             a { 

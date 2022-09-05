@@ -1,60 +1,7 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>48 Coffee Shop</title>
-
-    <!-- Google Fonts Connect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- List of Font Families -->
-    <!-- 'Open Sans', sans-serif -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <!-- 'Kaushan Script', cursive -->
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-
-    <!-- VITE -->
-    @vite([
-        'resources/scss/style.scss', 'resources/scss/fontawesome.scss',
-        'resources/js/app.js', 'resources/js/pages/home.js'
-    ])
-</head>
+@extends('layouts.master')
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-2 sticky-top">
-        <div class="container">
 
-            <!-- Navbar Brand -->
-            <a class="navbar-brand kaushan-script" href="#">48 Coffee</a>
-
-            <!-- Navbar Nav -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
-                <li class="nav-item"><a class="nav-link open-sans ms-2 active" aria-current="page" href="{{ route('page.drinks') }}">
-                    Home
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="{{ route('page.drinks') }}">
-                    Drinks
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="#benefits">
-                    Benefits
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="#coffee-detail">
-                    Restaurants
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="./costumers.html">
-                    Queue
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="./about.html">
-                    About Us
-                </a></li>
-                <li class="nav-item"><a class="nav-link open-sans ms-2" href="#">
-                    <strong>Login</strong>
-                </a></li>
-            </ul>
-        </div>
-    </nav>
+    @section('main-content')
 
     <!-- Header -->
     <div class="header container">
@@ -64,7 +11,7 @@
                 <h5 class="lead mt-0 open-sans"><i>Take a sip for a while...</i></h5>
                 <h2 class="kaushan-script my-5">Coffee Shop</h2>
                 <p class="open-sans my-5">Olé! Life is good when it starts with a great cup of coffee. Love is brewing the perfect cup of coffee, one sip at a time. The aroma that welcomes you in the morning</p>
-                <a href="{{ route('page.drinks') }}"><button class="btn btn-outline-primary shadow-none py-1 px-5" type="button">Relax & Drink</button></a>
+                <a href="{{ route('drinks.create') }}"><button class="btn btn-outline-primary shadow-none py-1 px-5" type="button">Relax & Drink</button></a>
             </div>
             <div class="col-lg-6 text-end">
                 <img src="{{ asset('images/items/png/coffee-item-1.png') }}" alt="header-img">
@@ -103,101 +50,8 @@
             <div class="details row px-0 mx-0 mt-5 py-5"></div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="container-fluid bg-primary">
-        <div class="container pt-4 pb-5">
-            <div class="text-center py-2"><h5>
-                    <i class="fa-solid fa-mug-saucer me-4"></i>
-                    48 Coffee Shop
-                    <i class="fa-solid fa-mug-saucer ms-4"></i>
-            </h5></div>
-            <div class="row mt-3 pt-4 first">
-                <div class="col-lg-4 pe-5">
-                    <h5 class="mb-4"><i class="fa-solid fa-user-graduate me-3"></i>For Education</h5>
-                    <p class="lato">Education, freedom and knowledge. These are the pillars for higher learning, but have often been used to describe some open source projects and services that have the potential to be abused by those that are not so innocent. Over the last two years, tools like stressers, Remote Administration Tools (RAT) and ransomware have been published under these pretenses, but do they serve a legitimate purpose?</p>
-
-                    <h5 class="mb-4"><i class="fa-solid fa-tv mt-5 me-3"></i>CITE 006 - CS31S1</h5>
-                    <p class="lato">Emerging technologies are technologies whose development, practical applications, or both are still largely unrealized. These technologies are generally new but also include older technologies finding new applications. Emerging technologies are often perceived as capable of changing the status quo.</p>
-                </div>
-                <div class="col-lg-4 pe-5">
-                    <h5 class="mb-4"><i class="fa-solid fa-cat me-3"></i>Categories</h5>
-                    <ul>
-                        <li><p class="m-0 p-0">Coffee</p></li>
-                        <li><p class="m-0 p-0">Soda</p></li>
-                        <li><p class="m-0 p-0">Tea</p></li>
-                        <li><p class="m-0 p-0">Restaurant</p></li>
-                        <li><p class="m-0 p-0">Location</p></li>
-                        <li><p class="m-0 p-0">Delivery</p></li>
-                        <li><p class="m-0 p-0">Payment</p></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-4"><i class="fa-solid fa-newspaper me-3"></i>Content</h5>
-                    <ul>
-                        <li><p class="m-0 p-0">Drinks</p></li>
-                        <li><p class="m-0 p-0">Restaurant & Settings</p></li>
-                        <li><p class="m-0 p-0">Coffee</p></li>
-                        <li><p class="m-0 p-0">Tea</p></li>
-                        <li><p class="m-0 p-0">Soda</p></li>
-                    </ul>
-                    <h5 class="my-4"><i class="fa-solid fa-tags mt-4 me-3"></i>Tags</h5>
-                    <ul class="d-flex flex-row flex-wrap p-0 m-0">
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">HTML</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">CSS</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">JavaScript</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1"><i class="fa-solid fa-star me-2"></i>JQuery</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1"><i class="fa-solid fa-star me-2"></i>Bootstrap</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">Node JS</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1"><i class="fa-solid fa-star me-2"></i>SASS</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">Fontawesome</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">Google Fonts</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1">unDraw</p></li>
-                        <li class="me-1"><p class="alert alert-secondary text-light m-0 px-2 py-1"><i class="fa-solid fa-star me-2"></i>Laravel</p></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container text-center">
-            <object class="mt-2" data="{{ asset('svg/powered.svg') }}"></object>
-            <h5 class="pb-4 pt-2 mt-5 open-sans">Powered By:</h5>
-            <div class="row mb-5">
-                <div class="powered col">
-                    <i class="fa-brands fa-js-square"></i>
-                </div>
-                <div class="powered col">
-                    <i class="fa-brands fa-bootstrap"></i>
-                </div>
-                <div class="powered col">
-                    <i class="fa-brands fa-sass"></i>
-                </div>
-                <div class="powered col">
-                    <i class="fa-brands fa-laravel"></i>
-                </div>
-                <div class="powered col">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <div class="powered col">
-                    <i class="fa-solid fa-font-awesome"></i>
-                </div>
-            </div>
-        </div>
-        <div class="copyright container">
-            <div class="row pt-4 pb-2">
-                <div class="w-50">
-                    <p><strong>&copy;</strong> 2022 <strong>48 Coffee Shop</strong>, developed by <strong>CS31S1 Coffee Group</strong></p>
-                </div>
-                <div class="w-50 d-flex flex-row justify-content-end align-items-start">
-                    <i class="fa-brands fa-facebook me-2"></i>
-                    <i class="fa-brands fa-twitter me-2"></i>
-                    <i class="fa-brands fa-instagram me-2"></i>
-                    <i class="fa-brands fa-google me-2"></i>
-                    <i class="fa-brands fa-youtube me-2"></i>
-                    <i class="fa-brands fa-github"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+        
+    @endsection
 
     <script>
         // rspcomponent js
@@ -464,5 +318,6 @@
         }
     ];
     </script>
+
 </body>
 </html>

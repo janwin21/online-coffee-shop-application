@@ -5,11 +5,14 @@
 $(document).ready(() => {
 
     let navbar = $('.navbar');
+    let body = $('html, body');
 
     $('.queue-header button').on('click', event => {
-        $('html, body').animate({
-            scrollTop: 
-                $(`#${event.currentTarget.dataset.nav}`).offset().top - navbar.outerHeight()
+        let queueBtn = $(`#${event.currentTarget.dataset.nav}`);
+
+        body.animate({
+            scrollTop: (queueBtn.length > 0) ? queueBtn.offset().top - navbar.outerHeight() :
+                body.offset().top
         }, 10);
     });
 

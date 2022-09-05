@@ -7,7 +7,8 @@ export default defineConfig({
             input: [
                 'resources/scss/style.scss', 'resources/scss/fontawesome.scss',
                 'resources/js/app.js',
-                'resources/js/pages/home.js', 'resources/js/pages/drinks.js'
+                'resources/js/pages/home.js', 'resources/js/pages/drinks.js',
+                'resources/js/pages/queue.js'
             ],
             refresh: true,
         }),

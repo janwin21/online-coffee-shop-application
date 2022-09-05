@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CostumerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,4 @@ Route::get('/', function () {
     return view('pages.index');
 })->name('page.home');
 
-Route::get('/drinks', function () {
-    return view('pages.drinks');
-})->name('page.drinks');
+Route::resource('/drinks', CostumerController::class);
