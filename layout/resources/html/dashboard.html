@@ -140,8 +140,8 @@
             </div>
 
             <!-- Main Content -->
-            <div class="col-8 dashboard-content bg-secondary p-4">
-                <h1 class="roboto text-primary mb-4">Dashboard</h1>
+            <div class="col-8 dashboard-content bg-dark p-4">
+                <h1 class="roboto text-light mb-4">Dashboard</h1>
 
                 <!-- Coffee Collections -->
                 <div class="coffee-collection text-center p-5">
@@ -178,17 +178,72 @@
                 </div>
 
                 <!-- Collections -->
-                <div class="two-tables">
+                <div class="two-tables py-5">
                     <div class="row">
-                        <div class="col-6"></div>
+                        <div class="col-6 text-center mt-4 px-5">
+                            <object class="mb-3 table-obj-1" data="../svg/colleague.svg"></object>
+                            <h3 class="text-light open-sans w-100 mt-4">Colleagues</h3>
+                            <p class="text-light open-sans mb-5">You can read specific information about other employees from your branch.</p>
+
+                            <table class="w-100">
+                                <tr>
+                                    <td class="py-3"><p class="text-light p-0 m-0">id#</p></td>
+                                    <td><p class="text-light p-0 m-0">employee_name</p></td>
+                                    <td><p class="text-light p-0 m-0">age</p></td>
+                                    <td><p class="text-light p-0 m-0">paranaque</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3"><p class="text-light p-0 m-0">id#</p></td>
+                                    <td><p class="text-light p-0 m-0">employee_name</p></td>
+                                    <td><p class="text-light p-0 m-0">age</p></td>
+                                    <td><p class="text-light p-0 m-0">paranaque</p></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-6 text-center mt-4 px-5">
+                            <object class="mb-3 table-obj-2" data="../svg/costumer.svg"></object>
+                            <h3 class="text-light open-sans w-100 mt-4">Costumers</h3>
+                            <p class="text-light open-sans mb-5">Check all clients that use this app for delivery service.</p>
+
+                            <table class="w-100">
+                                <tr>
+                                    <td class="py-3"><p class="text-light p-0 m-0">id#</p></td>
+                                    <td><p class="text-light p-0 m-0">costumer_name</p></td>
+                                    <td><p class="text-light p-0 m-0">age</p></td>
+                                    <td><p class="text-light p-0 m-0">paranaque</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3"><p class="text-light p-0 m-0">id#</p></td>
+                                    <td><p class="text-light p-0 m-0">costumer_name</p></td>
+                                    <td><p class="text-light p-0 m-0">age</p></td>
+                                    <td><p class="text-light p-0 m-0">paranaque</p></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
             <!-- Section -->
-            <div class="col-2 dashboard-section bg-dark p-4">
-                <a href="#" class="btn btn-primary w-100">Manage Order Notes</a>
+            <div class="col-2 dashboard-section bg-dark p-4 sticky-top">
+
+                <div class="w-100 profile px-3 py-2">
+                    <div class="row">
+                        <div class="col-2"><h6 class="text-light"><i class="fa-solid fa-user"></i></h6></div>
+                        <div class="col-10"><h6 class="text-light">username</h6></div>
+                        <div class="col-2"><p class="text-light py-0 my-1"><i class="fa-solid fa-house"></i></p></div>
+                        <div class="col-10"><p class="text-light py-0 my-1">city</p></div>
+                        <div class="col-2"><p class="text-light py-0 my-1"><i class="fa-solid fa-screwdriver"></i></p></div>
+                        <div class="col-10"><p class="text-light py-0 my-1">employee</p></div>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-warning shadow-none w-100">Manage Order Notes</a>
+
+                <!-- Coffee Type Navigation -->
+                <a href="#" class="btn btn-light shadow-none w-100 coffee-type-btn">coffee_type #</a>
+                <a href="#" class="btn btn-light shadow-none w-100 coffee-type-btn">coffee_type #</a>
             </div>
 
             <!-- Modal -->

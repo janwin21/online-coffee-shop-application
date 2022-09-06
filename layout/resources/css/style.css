@@ -11808,6 +11808,14 @@ button {
 .dashboard-content h1 {
   font-size: 2em !important;
 }
+.dashboard-content .coffee-collection h3, .dashboard-content .two-tables h3 {
+  font-size: 1.35em;
+  font-weight: 600;
+}
+.dashboard-content .coffee-collection p, .dashboard-content .two-tables p {
+  font-size: 0.9em;
+  color: #adb5bd !important;
+}
 .dashboard-content .coffee-collection {
   background-color: #212529 !important;
   border-top-left-radius: 10px !important;
@@ -11817,14 +11825,6 @@ button {
 .dashboard-content .coffee-collection object {
   width: 125px !important;
   animation: jump 1s linear infinite alternate !important;
-}
-.dashboard-content .coffee-collection h3 {
-  font-size: 1.35em;
-  font-weight: 600;
-}
-.dashboard-content .coffee-collection p {
-  font-size: 0.9em;
-  color: #adb5bd !important;
 }
 .dashboard-content .coffee-collection .card-album {
   background-color: #198754;
@@ -11879,6 +11879,17 @@ button {
 .dashboard-content .two-tables {
   background-color: #212529 !important;
 }
+.dashboard-content .two-tables .table-obj-1 {
+  width: 125px !important;
+  animation: jump 1s linear 0.5s infinite alternate;
+}
+.dashboard-content .two-tables .table-obj-2 {
+  width: 125px !important;
+  animation: jump 1s linear 1s infinite alternate;
+}
+.dashboard-content .two-tables tr:nth-child(odd) {
+  background-color: #343a40 !important;
+}
 
 .dashboard-modal {
   display: none;
@@ -11898,9 +11909,33 @@ button {
   font-size: 1em;
 }
 
-.dashboard-section a {
+.dashboard-section {
   background-color: #212529 !important;
-  border: 1px solid #212529 !important;
+  height: 100vh;
+  z-index: 1000 !important;
+  overflow-y: auto !important;
+  direction: rtl !important;
+}
+.dashboard-section a {
+  border-radius: 0 !important;
+}
+.dashboard-section .profile {
+  background-color: #212529 !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  direction: ltr !important;
+}
+.dashboard-section .coffee-type-btn {
+  transition: all 0.25s ease-out;
+}
+.dashboard-section .coffee-type-btn:hover {
+  background-color: #343a40 !important;
+  border: 1px solid #343a40 !important;
+  color: #fff !important;
+}
+.dashboard-section .coffee-type-btn:active {
+  background-color: #fff !important;
+  border: 1px solid #fff !important;
 }
 
 /*# sourceMappingURL=style.css.map */

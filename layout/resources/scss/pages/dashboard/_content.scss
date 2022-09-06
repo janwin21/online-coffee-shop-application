@@ -11,16 +11,7 @@
         font-size: 2em !important;
     }
 
-    .coffee-collection {
-        background-color: $gray-900 !important;
-        border-top-left-radius: 10px !important;
-        border-top-right-radius: 10px !important;
-        border-bottom: 1px solid $white;
-
-        object { 
-            width: 125px !important; 
-            animation: jump 1s linear infinite alternate !important;
-        }
+    .coffee-collection, .two-tables {
 
         h3 {
             font-size: 1.35em;
@@ -30,6 +21,19 @@
         p { 
             font-size: 0.9em; 
             color: $gray-500 !important;
+        }
+
+    }
+
+    .coffee-collection {
+        background-color: $gray-900 !important;
+        border-top-left-radius: 10px !important;
+        border-top-right-radius: 10px !important;
+        border-bottom: 1px solid $white;
+
+        object { 
+            width: 125px !important; 
+            animation: jump 1s linear infinite alternate !important;
         }
 
         .card-album {
@@ -85,6 +89,17 @@
 
     .two-tables {
         background-color: $gray-900 !important;
+        
+        @for $i from 1 through 2 {
+            .table-obj-#{$i} {
+                width: 125px !important; 
+                animation: jump 1s linear (0.5s * $i) infinite alternate;
+            }
+        }
+
+        tr:nth-child(odd) {
+            background-color: $gray-800 !important;
+        }
     }
 
 }
