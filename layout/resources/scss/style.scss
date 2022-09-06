@@ -22,3 +22,9 @@
 // import all components from authentication directory
 @use "./pages/authentications/login";
 @use "./pages/authentications/card";
+
+// import all components from dashboard directory
+@use "./pages/dashboard/sidebar";
+@use "./pages/dashboard/content";
+@use "./pages/dashboard/modal";
+@use "./pages/dashboard/section";

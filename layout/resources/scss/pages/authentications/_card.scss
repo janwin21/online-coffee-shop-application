@@ -3,7 +3,7 @@
 @use "../../components/mixins" as *;
 
 // card feedback section
-.card {
+.register-card {
     position: fixed;
     top: 0; right: 0;
     height: 100vh; 
@@ -29,7 +29,6 @@
 
         h5 { 
             font-size: 2.15em !important; 
-            color: $yellow !important; 
             text-shadow: 1px 1px 3px $black !important;
         }
 

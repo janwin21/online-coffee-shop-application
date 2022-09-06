@@ -1,0 +1,13 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+// section content section
+.dashboard-section {
+
+    a { 
+        background-color: $gray-900 !important; 
+        border: 1px solid $gray-900 !important;
+    }
+
+}

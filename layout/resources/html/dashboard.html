@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48 Coffee Shop</title>
+
+    <!-- Google Fonts Connect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- List of Font Families -->
+    <!-- 'Open Sans', sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- 'Kaushan Script', cursive -->
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <!-- 'Roboto', sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/fontawesome.css" media="screen">
+
+    <!-- JS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- JQuery CDN -->
+    <script src="../js/pages/dashboard.js"></script><!-- Dashboard Page -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-2 sticky-top">
+        <div class="container">
+
+            <!-- Navbar Brand -->
+            <a class="navbar-brand kaushan-script" href="#">48 Coffee</a>
+
+            <!-- Navbar Nav -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+                <li class="nav-item"><a class="nav-link open-sans ms-2" aria-current="page" href="#">
+                    Home
+                </a></li>
+                <li class="nav-item"><a class="nav-link open-sans ms-2" href="./drinks.html">
+                    Drinks
+                </a></li>
+                <li class="nav-item"><a class="nav-link open-sans ms-2 active" href="./costumers.html">
+                    Queue
+                </a></li>
+                <li class="nav-item"><a class="nav-link open-sans ms-2" href="./about.html">
+                    About Us
+                </a></li>
+                <li class="nav-item login"><a class="nav-link open-sans ms-2" href="#">
+                    <strong>Login</strong>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-2"></div>
+            <div class="col-2 dashboard-sidebar bg-primary pt-5 fixed-top">
+                <p class="bb m-0 p-0 mt-4"><span class="badge bg-light w-100 p-3 mt-1 text-start roboto">Types of Drink</span></p>
+                <p class="m-0 p-0"><span class="badge type-box bg-light w-100 p-3 text-start roboto">Drink Types Name</span></p>
+
+                <!-- Edit Coffee Type -->
+                <div class="edit-type-box p-3">
+
+                    <form action="#" method="POST">
+
+                    <div class="row">
+                        <div class="col-8"><p class="text-light open-sans">Add type of drink</p></div>
+                        <div class="col-4"><button type="submit" class="btn btn-primary open-sans shadow-none"><i class="fa-solid fa-plus"></i></button></div>
+                        <div class="col-12 mt-3">
+                            <div class="form-control px-0 mb-2">
+                                <label class="roboto mb-2" for="coffee_type">Drink Type<strong class="ms-1 text-danger">*</strong></label>
+                                <input required class="roboto pb-1" type="text" name="coffee_type" placeholder="type here...">
+                            </div>
+                            <div class="form-control px-0">
+                                <div class="row">
+                                    <label class="col-6 roboto mb-2 me-3" for="bg_color">BG Color</label>
+                                    <input required class="col-4" type="color" name="bg_color" value="#90604C">
+                                </div>
+                            </div>
+                            <div class="form-control px-0">
+                                <div class="row">
+                                    <label class="col-6 roboto mb-2 me-3" for="font_color">Font Color</label>
+                                    <input required class="col-4" type="color" name="font_color" value="#E9E6E1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </form>
+
+                </div>
+
+                <!-- Edit New Coffee -->
+                <div class="edit-coffee-box mt-3">
+
+                    <form action="#" method="POST">
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title text-light">Add New Drinks</h5>
+                                <p class="card-text text-light">Create your new drinks base on the existing types of drinks.</p>
+
+                                <div class="form-control px-0 mb-2">
+                                    <label class="roboto mb-2" for="coffee_name">Drinks Name<strong class="ms-1 text-danger">*</strong></label>
+                                    <input required class="roboto pb-1" type="text" name="coffee_name" placeholder="type here...">
+                                </div>
+                                <div class="form-control px-0 mb-2">
+                                    <label class="roboto mb-2" for="price">Price<strong class="ms-1 text-danger">*</strong></label>
+                                    <input required class="roboto pb-1" type="number" name="price" placeholder="type a number...">
+                                </div>
+                                <div class="form-control px-0 mb-2">
+                                    <p class="text-light">Drinks Coffee Type<strong class="ms-1 text-danger">*</strong></p>
+                                    <input required type="radio" id="coffee_type_name1" name="age" value="coffee_type_name">
+                                    <label class="roboto ms-2" for="coffee_type_name2">coffee_type_name</label><br>
+                                </div>
+                                <div class="form-control px-0 mb-2">
+                                    <label class="roboto mb-2" for="available">Available<strong class="ms-1 text-danger">*</strong></label>
+                                    <input required class="roboto pb-1" type="number" name="available" placeholder="type a number...">
+                                </div>
+                                <div class="form-control px-0">
+                                    <label class="roboto mb-2" for="short">Short Description</label>
+                                    <textarea class="roboto pb-1 w-100" name="short" placeholder="type here..."></textarea>
+                                </div>
+                                <div class="form-control px-0">
+                                    <label class="roboto mb-2" for="description">Description</label>
+                                    <textarea class="roboto pb-1 w-100" name="description" placeholder="type here..."></textarea>
+                                </div>
+                                <div class="col-4 float-end w-75 me-0 mt-2"><button type="submit" class="btn btn-primary open-sans shadow-none add-btn w-100">Add Drinks</button></div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-8 dashboard-content bg-secondary p-4">
+                <h1 class="roboto text-primary mb-4">Dashboard</h1>
+
+                <!-- Coffee Collections -->
+                <div class="coffee-collection text-center p-5">
+                    <object class="mb-3" data="../svg/edit-drinks.svg"></object>
+                    <h3 class="text-light open-sans w-100 mt-4">Drink Items</h3>
+                    <p class="text-light open-sans mb-5">Manage your coffee / drink items here. Don't forget to specify the type of the items for more specification.</p>
+
+                    <div class="card-album text-start px-4">
+                        <div class="row pt-4 pb-3">
+                            <div class="col-10"><h4 class="roboto text-light">Coffee Type Name</h4></div>
+                            <div class="col-2 text-end"><button class="btn btn-danger delete-btn shadow-none" data-name="coffee_type" data-url="COFFEE-TYPE URL">Delete</button></div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-4 m-0 pb-4">
+                                <div class="card">
+                                    <img class="card-img-top h-100" src="../images/coffee/cuban-coffee.jpg" alt="...">
+                                    <div class="cover w-100 h-100 p-2">
+                                        <button class="float-end shadow-none ms-1 px-2 py-1 btn btn-warning"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="float-end shadow-none m-0 px-2 py-1 btn btn-danger" data-name="coffee_name" data-url="COFFEE-NAME URL"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                    <div class="card-body w-100 h-50 p-2">
+                                        <h5 class="card-title text-light">Coffee Name Coffee Name Coffee Name</h5>
+                                        <p class="card-text mb-0">Price: <strong class="text-light">&#8369;1000</strong></p>
+                                        <p class="card-text mt-0">Available: <strong class="text-light">5 Stacks</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Collections -->
+                <div class="two-tables">
+                    <div class="row">
+                        <div class="col-6"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Section -->
+            <div class="col-2 dashboard-section bg-dark p-4">
+                <a href="#" class="btn btn-primary w-100">Manage Order Notes</a>
+            </div>
+
+            <!-- Modal -->
+            <div class="col-12 dashboard-modal w-100">
+                <div class="modal d-block">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-danger py-1">
+                                <h5 class="modal-title text-light">Deleting Data</h5>
+                                <button type="button" class="btn btn-danger shadow-none text-light cancel"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer py-1">
+                                <button type="button" class="px-4 py-1 shadow-none btn btn-secondary cancel">Cancel</button>
+                                <form class="delete-item-form" action="#" method="POST">
+                                    <button type="submit" class="px-4 py-1 shadow-none btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

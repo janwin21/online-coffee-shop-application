@@ -11671,7 +11671,7 @@ button {
   border: 1px solid #90604C !important;
 }
 
-.card {
+.register-card {
   position: fixed;
   top: 0;
   right: 0;
@@ -11679,45 +11679,228 @@ button {
   border: none !important;
   z-index: 1000 !important;
 }
-.card img {
+.register-card img {
   object-fit: cover !important;
 }
-.card .cover, .card .card-body {
+.register-card .cover, .register-card .card-body {
   position: absolute;
   top: 0;
   right: 0;
 }
-.card .cover {
+.register-card .cover {
   background-color: #212529;
   opacity: 0.75;
   transition: all 0.25s ease-out;
 }
-.card .card-body {
+.register-card .card-body {
   background-color: transparent !important;
   overflow-y: auto !important;
 }
-.card .card-body h5 {
+.register-card .card-body h5 {
   font-size: 2.15em !important;
-  color: #ffc107 !important;
   text-shadow: 1px 1px 3px #000 !important;
 }
-.card .card-body .feedback {
+.register-card .card-body .feedback {
   border-radius: 6px;
 }
-.card .card-body .feedback i {
+.register-card .card-body .feedback i {
   font-size: 0.8em;
   color: #ffc107 !important;
 }
-.card .card-body .feedback h4 {
+.register-card .card-body .feedback h4 {
   font-size: 1.25em !important;
 }
-.card .card-body .feedback .rate {
+.register-card .card-body .feedback .rate {
   color: #ced4da !important;
   font-weight: 400 !important;
 }
-.card .whiten {
+.register-card .whiten {
   background-color: #fff !important;
   opacity: 0.9;
+}
+
+.dashboard-sidebar {
+  background-color: #212529 !important;
+  overflow-y: auto !important;
+  height: 100vh;
+  z-index: 1000 !important;
+}
+.dashboard-sidebar .badge {
+  background-color: #212529 !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+.dashboard-sidebar .bb {
+  border-bottom: 1px solid #fff;
+}
+.dashboard-sidebar .type-box {
+  border: none !important;
+  border-radius: 0px !important;
+  transition: all 0.25s ease-out;
+  border-right: 1rem solid rgba(255, 255, 255, 0) !important;
+  cursor: pointer;
+}
+.dashboard-sidebar .type-box:hover {
+  border-right: 1rem solid #fff !important;
+}
+.dashboard-sidebar .type-box:active {
+  border-right: 1rem solid rgba(255, 255, 255, 0) !important;
+}
+.dashboard-sidebar .edit-type-box {
+  background-color: #212529;
+  border-bottom: 1px solid #fff;
+}
+.dashboard-sidebar .edit-type-box p, .dashboard-sidebar .edit-type-box button {
+  font-size: 0.8em !important;
+}
+.dashboard-sidebar .edit-type-box p {
+  color: #adb5bd !important;
+}
+.dashboard-sidebar .edit-coffee-box {
+  background-color: #212529;
+}
+.dashboard-sidebar .edit-coffee-box .card {
+  background-color: #212529;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: none !important;
+}
+.dashboard-sidebar .edit-coffee-box .card .card-body {
+  box-shadow: none !important;
+}
+.dashboard-sidebar .edit-coffee-box .card .card-text {
+  color: #adb5bd !important;
+}
+.dashboard-sidebar .edit-coffee-box .card .card-title, .dashboard-sidebar .edit-coffee-box .card .card-text {
+  font-size: 0.8em !important;
+}
+.dashboard-sidebar .form-control {
+  background-color: transparent !important;
+  border: none;
+}
+.dashboard-sidebar .form-control label, .dashboard-sidebar .form-control input, .dashboard-sidebar .form-control textarea, .dashboard-sidebar .form-control p {
+  color: #fff;
+  font-size: 0.8em !important;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  border-radius: none;
+  outline: none;
+}
+.dashboard-sidebar .form-control input[type=text], .dashboard-sidebar .form-control input[type=number], .dashboard-sidebar .form-control textarea {
+  border-bottom: 1px solid #fff !important;
+}
+.dashboard-sidebar .form-control input[type=color] {
+  cursor: pointer;
+}
+.dashboard-sidebar .add-btn {
+  font-size: 0.75em !important;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+.dashboard-content h1 {
+  font-size: 2em !important;
+}
+.dashboard-content .coffee-collection {
+  background-color: #212529 !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom: 1px solid #fff;
+}
+.dashboard-content .coffee-collection object {
+  width: 125px !important;
+  animation: jump 1s linear infinite alternate !important;
+}
+.dashboard-content .coffee-collection h3 {
+  font-size: 1.35em;
+  font-weight: 600;
+}
+.dashboard-content .coffee-collection p {
+  font-size: 0.9em;
+  color: #adb5bd !important;
+}
+.dashboard-content .coffee-collection .card-album {
+  background-color: #198754;
+  border-radius: 6px !important;
+}
+.dashboard-content .coffee-collection .card-album h4 {
+  font-size: 1.35em !important;
+}
+.dashboard-content .coffee-collection .card-album .delete-btn {
+  font-size: 0.9em !important;
+}
+.dashboard-content .coffee-collection .card-album .card {
+  position: relative;
+  background-color: #212529 !important;
+  height: 175px !important;
+  border: none !important;
+}
+.dashboard-content .coffee-collection .card-album .card img {
+  object-fit: cover !important;
+}
+.dashboard-content .coffee-collection .card-album .card .cover, .dashboard-content .coffee-collection .card-album .card .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.dashboard-content .coffee-collection .card-album .card .cover {
+  border-radius: 6px !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.25s ease-out;
+}
+.dashboard-content .coffee-collection .card-album .card:hover .cover {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.dashboard-content .coffee-collection .card-album .card .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #212529;
+}
+.dashboard-content .coffee-collection .card-album .card .card-body .card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+}
+.dashboard-content .coffee-collection .card-album .card .card-body .card-text {
+  font-size: 0.9em;
+}
+.dashboard-content .coffee-collection .card-album .card .card-body button {
+  font-size: 0.9em;
+}
+.dashboard-content .two-tables {
+  background-color: #212529 !important;
+}
+
+.dashboard-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1020 !important;
+  height: 100vh;
+}
+.dashboard-modal .modal {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+.dashboard-modal .modal .modal-title {
+  font-size: 1.1em;
+}
+.dashboard-modal .modal .modal-body {
+  font-size: 1em;
+}
+
+.dashboard-section a {
+  background-color: #212529 !important;
+  border: 1px solid #212529 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

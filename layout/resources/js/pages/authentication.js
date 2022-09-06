@@ -31,8 +31,6 @@ $(document).ready(() => {
         loginFixed.removeClass('primary');
     });
 
-    register.click();
-
     new Feedback($('.feedback-column'), $('.feedback-left'), feedbacks).setDetails();
 
 });
