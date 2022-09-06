@@ -1,0 +1,77 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+// dashboard sidebar section
+.dashboard-sidebar {
+    background-color: $gray-900 !important;
+    overflow-y: auto !important;
+    height: 100vh;
+    z-index: 1000 !important;
+
+    .badge { 
+        background-color: $gray-900 !important; 
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+
+    .bb { border-bottom: 1px solid $white; }
+    
+    .type-box {
+        border: none !important;
+        border-radius: 0px !important;
+        @include transition-to-all-25;
+        border-right: 1rem solid rgba($white, 0) !important;
+        cursor: pointer;
+
+        &:hover { border-right: 1rem solid $white !important; }
+        &:active { border-right: 1rem solid rgba($white, 0)!important; }
+    }
+
+    .edit-type-box {
+        background-color: $gray-900;
+        border-bottom: 1px solid $white;
+
+        p, button { font-size: 0.8em !important; }
+        p { color: $gray-500 !important; }
+    }
+
+    .edit-coffee-box {
+        background-color: $gray-900;
+
+        .card {
+            background-color: $gray-900;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: none !important;
+
+            .card-body { box-shadow: none !important; }
+            .card-text { color: $gray-500 !important; }
+
+            .card-title, .card-text {
+                font-size: 0.8em !important;
+            }
+        }
+    }
+
+    .form-control {
+        background-color: transparent !important;
+        border: none;
+
+        label, input, textarea, p { 
+            color: $white;
+            font-size: 0.8em !important; 
+            font-weight: 500;
+            background-color: transparent;
+            border: none;
+            border-radius: none;
+            outline: none;
+        }
+
+        input[type=text], input[type=number], textarea { border-bottom: 1px solid $white !important; }
+        input[type=color] { cursor: pointer; }
+    }
+
+    .add-btn { font-size: 0.75em !important; }
+
+}

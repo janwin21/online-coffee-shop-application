@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CoffeeTypeController;
 use App\Http\Controllers\CostumerController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-})->name('page.home');
+Route::get('/', function () { return view('pages.index'); })->name('page.home');
 
 Route::resource('/drinks', CostumerController::class);
+Route::resource('/coffee-type', CoffeeTypeController::class);
+
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

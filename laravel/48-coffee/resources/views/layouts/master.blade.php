@@ -8,4 +8,6 @@
 @yield('main-content')
 
 {{-- footer --}}
-@include('layouts.footer')
+@unless (Request::is('login') || Request::is('dashboard'))
+    @include('layouts.footer')
+@endunless

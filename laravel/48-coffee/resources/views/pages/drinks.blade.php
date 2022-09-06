@@ -30,27 +30,7 @@
     </header>
 
     <!-- Coffee Shop Display -->
-    <div class="coffee-shop container my-5">
-        <!-- 
-        <h1 class="coffee-shop-type open-sans roboto bg-dark text-light w-50 px-5 py-2">Coffee Type 1</h1>
-
-        <div class="coffee-item-collection mx-0 my-4 row">
-            
-            <div class="coffee-shop-description col-sm-6 col-md-6 col-lg-4 m-0 p-2">
-                <div class="card">
-                    <img class="card-img-top w-100 h-100" src="../images/coffee/affogato.jpg" alt="...">
-                    <div class="main-cover w-100 h-100 p-4">
-                        <button class="btn btn-primary m-3 shadow-none"><i class="text-light fa-solid fa-plus"></i></button>
-                        <h3 class="card-title text-secondary roboto">Coffee Name</h3>
-                        <p class="card-text text-light open-sans">Available Stack: <strong>10</strong></p>
-                        <h2 class="text-secondary open-sans mx-4 my-3"><strong class="me-1">&#8369;</strong>89.99</h2>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        -->
-    </div>
+    <div class="coffee-shop container my-5"></div>
 
     <!-- Cart Button Display -->
     <a class="cart-btn btn btn-info open-sans shadow-none px-5 m-3" href="#coffee-buy-display">
@@ -82,7 +62,7 @@
             </div></div>
             <div class="col-6">
                 <p class="text-dark d-hidden-p">.</p>
-                <p class="text-dark">Select any table # if take out...</p>
+                <p class="text-dark">Select any table # if <strong>take out</strong>...</p>
             </div>
         </div>
     </div>
@@ -90,42 +70,7 @@
     <!-- Buy Display Table -->
     <div class="coffee-buy-table container p-0 my-5">
         <!-- Table -->
-        <table class="container">
-            <!--
-            <tr class="row px-4 mb-3">
-                <th class="col open-sans text-light d-flex align-items-center">Drinks</th>
-                <th class="col open-sans text-light d-flex align-items-center deletable">Type</th>
-                <th class="col open-sans text-light d-flex align-items-center">Quantity</th>
-                <th class="col open-sans text-light d-flex align-items-center deletable">Price</th>
-                <th class="col open-sans text-light d-flex align-items-center">Total</th>
-                <th class="col open-sans text-light d-flex align-items-center"></th>
-            </tr>
-            <tr class="row px-4 my-0">
-                <td class="col open-sans d-flex align-items-center px-2 mx-0">
-                    <input type="text" name="coffee-name" value="coffee name" disabled>
-                </td>
-                <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">
-                    <input type="text" name="coffee-type" value="coffee type 1" disabled>
-                </td>
-                <td class="col open-sans d-flex align-items-center px-2 mx-0">
-                    <input type="text" name="quantity" value="2" disabled>
-                </td>
-                <td class="col open-sans d-flex align-items-center px-2 mx-0 deletable">&#8369;89.99</td>
-                <td class="col open-sans d-flex align-items-center px-2 mx-0">&#8369;89.99 * 2</td>
-                <td class="col open-sans row d-flex align-items-center px-2 mx-0">
-                    <div class="col-md-12 col-xl-6 px-0">
-                        <button class="btn btn-danger shadow-none open-sans buy-delete">Delete</button>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-3 px-0">
-                        <button class="btn btn-danger shadow-none open-sans minus"><i class="fa-solid fa-minus"></i></button>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-3 px-0">
-                        <button class="btn btn-danger shadow-none open-sans plus"><i class="fa-solid fa-plus"></i></button>
-                    </div>
-                </td>
-            </tr>
-            -->
-        </table>
+        <table class="container"></table>
 
         <!-- Buy Display Confirmation -->
         <div class="container buy-drinks mt-5">

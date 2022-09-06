@@ -21,6 +21,8 @@
         'resources/js/app.js',
         Request::is('/') ? 'resources/js/pages/home.js' :
         (Request::is('drinks/create') ? 'resources/js/pages/drinks.js' : 
-        (Request::is('drinks') ? 'resources/js/pages/queue.js' : ''))
+        (Request::is('drinks') ? 'resources/js/pages/queue.js' :
+        (Request::is('login') ? 'resources/js/pages/authentication.js' :
+        (Request::is('dashboard') ? 'resources/js/pages/dashboard.js' : ''))))
     ])
 </head>

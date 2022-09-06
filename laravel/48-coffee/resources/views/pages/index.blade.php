@@ -32,7 +32,7 @@
     </div>
 
     <!-- Restaurant Collections -->
-    <div class="restaurant container-fluid text-center mx-0 mt-0 px-0 pt-0">
+    <div class="restaurant container-fluid text-center mx-0 mt-0 px-0 pt-0 mb-5">
         <div class="container-fluid bg-primary pt-3">
             <object class="mt-5 mb-0" data="{{ asset('svg/restaurant.svg') }}"></object>
             <h2 class="mt-5 pb-5 text-light open-sans">Visit Our Coffee Shops</h2>

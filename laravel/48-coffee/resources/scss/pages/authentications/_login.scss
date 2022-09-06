@@ -1,0 +1,161 @@
+// import here
+@use "../../costumize" as *;
+@use "../../components/mixins" as *;
+
+@include jump;
+
+// login section
+.login-fixed {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1020 !important;
+    height: 100vh; 
+    background-color: $gray-900 !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 2px 6px $black;
+    @include transition-to-all-25;
+
+    .header {
+        img {
+            width: 9em !important;
+        }
+
+        h2 {
+            font-size: 3.5em !important;
+            color: $white;
+            padding-top: 0 !important;
+        }
+
+        p { color: $dirty-white !important; }
+        button { font-size: 0.9em !important; font-weight: 500; }
+
+        .form-control {
+            background-color: transparent !important;
+            border: none !important;
+
+            label {
+                color: $secondary !important;
+                font-size: 0.95em !important;
+            }
+
+            input { outline: none !important; 
+                &:focus { border: 2px solid $dirty-white !important; }
+            }
+        }
+
+        .login-btn {
+            background-color: $white !important;
+            border: 1px $white !important;
+            @include transition-to-all-25;
+
+            &:hover {
+                background-color: $dark-orange !important;
+                border: 1px $dark-orange !important;
+                color: $white !important;
+            }
+
+            &:active { background-color: $white !important; }
+        }
+
+        .register-btn {
+            background-color: $green !important;
+            border: 1px $green !important;
+            @include transition-to-all-25;
+
+            &:hover {
+                background-color: $white !important;
+                border: 1px $white !important;
+                color: $green !important;
+            }
+
+            &:active { background-color: $green !important; }
+        }
+        
+        .feedback-left {
+            display: none;
+
+            .bg-feedback { 
+                background-color: $gray-900 !important; 
+                border-radius: 6px !important;
+                h5 { font-size: 1.05em !important; }
+                .description { font-size: 0.9em !important; }
+            }
+        }
+
+    }
+}
+
+.primary { background-color: $primary !important; }
+
+// register section
+.register-fixed {
+    display: none;
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 8rem !important;
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+    z-index: 1010 !important;
+
+    $object-width: 175px;
+
+    .register-header, .register-content { border: 1px solid $primary !important; }
+
+    .register-header {
+        position: relative;
+
+        .close-btn {
+            position: absolute;
+            top: 0; right: 0;
+            background-color: transparent !important;
+            border: none !important;
+            font-size: 1.75em !important;
+            @include transition-to-all-25;
+
+            &:hover { font-size: 2em !important; }
+            &:active { font-size: 1.75em !important; }
+        }
+
+        &:first-child {
+            border-top-left-radius: 1rem !important;
+            border-top-right-radius: 1rem !important;
+        }
+
+        object { 
+            width: $object-width; 
+            animation: jump 1s linear infinite alternate !important;
+        }
+
+        h3 { font-size: 1.5em !important; }
+        p { font-size: 0.9em !important; }
+    }
+
+    .register-content {
+        background-color: $white !important;
+
+        .form-control {
+            border-radius: 0px !important;
+            border: none !important;
+            background-color: transparent !important;
+            
+            label {
+                font-size: 0.95em !important;
+                font-weight: bold !important;
+            }
+        }
+
+        .security-note { font-size: 0.9em !important; }
+        #employee-btn { background-color: $orange !important; border: 1px solid $orange !important; }
+        #costumer-btn { background-color: $green !important; border: 1px solid $green !important; }
+
+    }
+
+    footer {
+        height: 5em !important;
+        border: 1px solid $primary !important;
+    }
+}
