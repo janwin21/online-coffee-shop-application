@@ -9,8 +9,8 @@ export default function CoffeeOrder(settings, parent) {
     // templates
     this.template = `<!-- Second Card Collection Design -->
         <div class="col-sm-6 col-md-3 col-lg-2 m-0 p-2">
-            <div class="card card-coffee-item" data-name="{{ coffee-name }}" data-coffee-type="{{ coffee-type }}" data-available="{{ available }}" data-price="{{ price }}" data-index="{{ index }}" data-main-index="{{ mainIndex }}">
-                <img class="card-img-top w-100 h-100" src="../images/coffee/{{ coffee-name-img }}.jpg" alt="...">
+            <div class="card card-coffee-item" data-name="{{ coffee-name }}" data-coffee-type="{{ coffee-type }}" data-available="{{ available }}" data-price="{{ price }}" data-index="{{ index }}" data-main-index="{{ mainIndex }}" data-image_path="{{ coffee-name-img }}">
+                <img class="card-img-top w-100 h-100" src="../images/saveCoffees/{{ coffee-name-img }}" alt="...">
                 <div class="cover w-100 h-100">
                     <i class="text-secondary fa-solid fa-plus"></i>
                     <p class="text-light roboto w-100 text-center px-2">{{ coffee-name }}</p>
@@ -21,9 +21,9 @@ export default function CoffeeOrder(settings, parent) {
 
     this.description = `<!-- Description Format -->
         <div class="card">
-            <img class="card-img-top w-100 h-100" src="../images/coffee/{{ coffee-name-img }}.jpg" alt="...">
+            <img class="card-img-top w-100 h-100" src="../images/saveCoffees/{{ coffee-name-img }}" alt="...">
             <div class="main-cover w-100 h-100 p-4">
-                <button class="btn btn-primary m-3 shadow-none" data-name="{{ coffee-name }}" data-coffee-type="{{ coffee-type }}" data-available="{{ available }}" data-price="{{ price }}" data-index="{{ index }}" data-main-index="{{ mainIndex }}"><i class="text-light fa-solid fa-plus"></i></button>
+                <button class="btn btn-primary m-3 shadow-none" data-name="{{ coffee-name }}" data-coffee-type="{{ coffee-type }}" data-available="{{ available }}" data-price="{{ price }}" data-index="{{ index }}" data-main-index="{{ mainIndex }}" data-image_path="{{ coffee-name-img }}"><i class="text-light fa-solid fa-plus"></i></button>
                 <h3 class="card-title text-secondary roboto">{{ coffee-name }}</h3>
                 <p class="card-text text-light open-sans">Available Stack: <strong id="available">{{ available }}</strong></p>
                 <h2 class="text-secondary open-sans mx-4 my-3"><strong class="me-1">&#8369;</strong>{{ price }}</h2>
@@ -51,7 +51,7 @@ export default function CoffeeOrder(settings, parent) {
 
             setting.data.forEach((d, index) => {
                 coffeeItemText += this.template
-                                    .replace('{{ coffee-name-img }}', d.name.replaceAll(' ', '-'))
+                                    .replaceAll('{{ coffee-name-img }}', d.image_path)
                                     .replace('{{ available }}', d.available)
                                     .replace('{{ price }}', parseFloat(d.price).toFixed(2))
                                     .replace('{{ mainIndex }}', mainIndex)
@@ -62,8 +62,7 @@ export default function CoffeeOrder(settings, parent) {
                 // set the description box at the first index values
                 if(index == setting.selectedIndex) descriptionText += this.description
                                                       .replaceAll('{{ coffee-name }}', d.name)
-                                                      .replace('{{ coffee-name-img }}', d.name
-                                                           .replaceAll(' ', '-'))
+                                                      .replaceAll('{{ coffee-name-img }}', d.image_path)
                                                       .replaceAll('{{ available }}', d.available)
                                                       .replaceAll('{{ price }}', parseFloat(d.price).toFixed(2))
                                                       .replace('{{ mainIndex }}', mainIndex)
@@ -96,7 +95,7 @@ export default function CoffeeOrder(settings, parent) {
     this.setDescription = currentTarget => {
         $(this.descriptiveComponent[currentTarget.dataset.mainIndex]).html(
             this.description.replaceAll('{{ coffee-name }}', currentTarget.dataset.name)
-                            .replace('{{ coffee-name-img }}', currentTarget.dataset.name.replaceAll(' ', '-'))
+                            .replace('{{ coffee-name-img }}', currentTarget.dataset.image_path)
                             .replace('{{ mainIndex }}', currentTarget.dataset.mainIndex)
                             .replace('{{ index }}', currentTarget.dataset.index)
                             .replaceAll('{{ available }}', currentTarget.dataset.available)

@@ -13,7 +13,7 @@
                     <h2 class="kaushan-script mt-5 mb-4 pt-0 w-100">Coffee Shop</h2>
                     <p class="open-sans mt-4 mb-5 pt-2 login-description">Login for drinks delivery and employee service. Enjoy using our application &#128513;<br/>
 
-                        @if ($errors->any())
+                        @if($errors->any())
 
                             @foreach ($errors->all() as $error)
                                 <br/><strong class="text-danger">{{ $error }}</strong>
@@ -161,8 +161,9 @@
                         <p class="roboto text-danger security-note"><strong>Note: </strong>password should be 8 or more characters.</p>
                     </div>
                     <div class="col-12 m-0 p-0 mt-3 text-end">
-                        <button class="btn btn-primary roboto" type="submit" id="employee-btn">Confirm as Employee</button>
-                        <button class="btn btn-primary roboto" type="submit" id="costumer-btn">Confirm as Costumer</button>
+                        <input class="hired-input d-none" type="text" name="hired">
+                        <button class="btn btn-primary roboto confirm-btn" type="submit" id="employee-btn" data-hired="true">Confirm as Employee</button>
+                        <button class="btn btn-primary roboto confirm-btn" type="submit" id="costumer-btn" data-hired="false">Confirm as Costumer</button>
                     </div>
                 </div>
             </div>

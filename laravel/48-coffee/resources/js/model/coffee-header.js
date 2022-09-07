@@ -24,11 +24,12 @@ export default function CoffeeHeader(parent) {
         let cover = this.parent.find('.animated-cover');
 
         setInterval(() => {
-            cover.fadeIn(milliseconds, () => {
-                this.setDetails(++this.index);
-                if(this.index + 1 >= this.clonedSettings.length) this.index = -1;
-                cover.fadeOut(milliseconds)
-            }); 
+            if(!this.empty) 
+                cover.fadeIn(milliseconds, () => {
+                    this.setDetails(++this.index);
+                    if(this.index + 1 >= this.clonedSettings.length) this.index = -1;
+                    cover.fadeOut(milliseconds)
+                }); 
         }, interval);
     
         return this;
@@ -40,7 +41,7 @@ export default function CoffeeHeader(parent) {
 
         this.settings.forEach((item, index) => {
             item.data.forEach((d, i) => {
-                if(d.mini !== undefined)
+                if(d.mini.length != 0 && d.description.length != 0)
                     this.clonedSettings.push({...d, coffeeType: item.coffeeType});
             });
         });
@@ -49,21 +50,33 @@ export default function CoffeeHeader(parent) {
     };
 
     this.setDetails = index => {
-
+        
         this.index = index;
+        this.empty = this.clonedSettings.length <= 1;
+    
         let item = this.clonedSettings[this.index];
+        const hasOne = this.clonedSettings.length == 1;
+
+        const mini = 'Take a sip for a while...';
+        const name = '48 Coffee';
+        const description = 'Olé! Life is good when it starts with a great cup of coffee. Love is brewing the perfect cup of coffee, one sip at a time.';
+        const home = '';
+        const coffee_type = 'Hello!';
+        const available = 'Not';
+        const price = '0.00';
 
         let cardBodyText = this.cardBody
-                               .replace('{{ mini }}', item.mini)
-                               .replace('{{ coffee-name }}', item.name)
-                               .replace('{{ description }}', item.description)
-                               .replace('{{ coffee-type-id }}', item.coffeeType.replace(' ', '-'));
+                               .replace('{{ mini }}', (!this.empty || hasOne) ? item.mini : mini)
+                               .replace('{{ coffee-name }}', (!this.empty || hasOne) ? item.name : name)
+                               .replace('{{ description }}', (!this.empty || hasOne) ? item.description : description)
+                               .replace('{{ coffee-type-id }}', (!this.empty || hasOne) ? item.coffeeType.replace(' ', '-') : home);
 
         let coffeeDescriptionText = this.coffeeDescription
-                                        .replace('{{ coffee-type }}', item.coffeeType)
-                                        .replace('{{ available }}', item.available)
-                                        .replace('{{ price }}', parseFloat(item.price).toFixed(2));
+                                        .replace('{{ coffee-type }}', (!this.empty || hasOne) ? item.coffeeType : coffee_type)
+                                        .replace('{{ available }}', (!this.empty || hasOne) ? item.available : available)
+                                        .replace('{{ price }}', (!this.empty || hasOne) ? parseFloat(item.price).toFixed(2) : price);
 
+        this.parent.find('.card-img-top').attr('src', `../images/saveCoffees/${item.image_path}`);
         this.parent.find('.card-body').html(cardBodyText);
         this.parent.find('.coffee-description').html(coffeeDescriptionText);
 

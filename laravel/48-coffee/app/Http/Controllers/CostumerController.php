@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CostumerRequest;
+use App\Models\Coffee;
+use App\Models\CoffeeType;
 use Illuminate\Http\Request;
 use App\Models\Costumer;
 use App\Models\Orders;
+use Illuminate\Support\Facades\Auth;
 
 class CostumerController extends Controller
 {
@@ -28,7 +31,10 @@ class CostumerController extends Controller
      */
     public function create() 
     {
-        return view('pages.drinks');
+
+        return view('pages.drinks', [
+            'coffee_types' => CoffeeType::get()
+        ]);
     }
 
     /**
@@ -54,13 +60,21 @@ class CostumerController extends Controller
         ]);
 
         for($i = 0; $i < $request->row_size; $i++) {
+            $quantity = $coffeeQuantities[$i];
+            $coffee = Coffee::where('coffee_name', $coffeeNames[$i])->first();
+            $coffee->available -= $quantity;
+
             Orders::create([
                 'costumer_id' => $costumer->id,
+                'user_id' => (Auth::user()) ? Auth::user()->id : null,
+                'coffee_id' => $coffee->id,
                 'service_type' => strval($request->service_type),
                 'coffee_name' => strval($coffeeNames[$i]),
                 'coffee_type' => strval($coffeeTypes[$i]),
-                'coffee_quantity' => $coffeeQuantities[$i]
+                'coffee_quantity' => $quantity
             ]);
+
+            $coffee->save();
         }
 
         return redirect(route('drinks.index'));
@@ -106,9 +120,19 @@ class CostumerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) 
+    public function destroy(Request $request, $id) 
     {
-        Costumer::where('id', $id)->delete();
+        $costumer = Costumer::where('id', $id)->first();
+
+        if($request->button_type === 'cancel') {
+            foreach($costumer->orders as $order) {
+                $order->coffee->available += $order->coffee_quantity;
+                $order->coffee->save();
+            }
+        }
+
+        $costumer->delete();
+
         return redirect(route('drinks.index'));
     }
 }

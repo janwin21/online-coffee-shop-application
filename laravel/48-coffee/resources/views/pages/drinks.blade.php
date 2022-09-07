@@ -1,6 +1,6 @@
 @extends('layouts.master')
 <body>
-    
+
     @section('main-content')
 
     <!-- Coffee Header Display -->
@@ -42,7 +42,7 @@
         <div class="container text-center">
             <object class="my-5" data="{{ asset('svg/drink-cart.svg') }}"></object>
             <h4 class="px-5 text-light">BUY A DRINKS</h4>    
-            <p class="open-sans text-light py-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, consequatur molestiae! Rem recusandae porro nostrum, optio illo dolorem fugiat nobis corrupti culpa fugit iste vel adipisci quibusdam distinctio blanditiis sapiente.</p>
+            <p class="open-sans text-light py-5">Your order displayed from the table list below. Please check your ordered drinks and you can modify it through your prefenrence.</p>
         </div>
     </div>
 
@@ -86,7 +86,13 @@
             <div class="buy w-100 d-flex justify-content-end mt-5">
                 <p class="text-dark d-flex align-items-center h-100 open-sans note">Once click, your order will proceed to process</p>
                 <!-- create a routes to determine if it is take-out or dine-in -->
-                <button type="submit" class="btn btn-primary take-out shadow-none px-4 ms-4 open-sans" data-service="take out">Take out</button>
+                @if (Auth::user())
+
+                <button type="submit" class="btn btn-warning delivery shadow-none px-4 ms-2 open-sans" data-service="delivery">Delivery</button>
+                    
+                @endif
+
+                <button type="submit" class="btn btn-primary take-out shadow-none px-4 ms-2 open-sans" data-service="take out">Take out</button>
                 <button type="submit" class="btn btn-primary dine-in shadow-none px-4 ms-2 open-sans" data-service="dine in">Dine in</button>
             </div>
         </div>
@@ -98,55 +104,32 @@
 
     <script>
         // drink js
+
         const settings = [
+            @foreach ($coffee_types as $coffee_type)
+
             {
-                coffeeType: 'hot coffee',
+                coffeeType: '{{ $coffee_type->coffee_type }}',
                 selectedIndex: 0,
                 data: [
+
+                    @foreach ($coffee_type->coffees as $coffee)
+
                     { 
-                        name: 'cuban coffee',
-                        mini: 'Type of espresso that originated in Cuba...',
-                        description: 'A sweet espresso drink made with strong, dark roast espresso sweetened with a thick sugar foam. It\'s the most delicious coffee beverage of all time!',
-                        available: 24,
-                        price: 60.99
+                        name: '{{ $coffee->coffee_name }}',
+                        mini: '{{ $coffee->short }}',
+                        description: '{{ $coffee->description }}',
+                        available: '{{ $coffee->available }}',
+                        price: '{{ $coffee->price }}',
+                        image_path: '{{ $coffee->image_path }}'
                     },
-                    { 
-                        name: 'french cafe au lait',
-                        available: 4,
-                        price: 99.99
-                    },
-                    { 
-                        name: 'the perfect cappuccino',
-                        mini: 'A temperature of 150 degrees Fahrenheit is perfect!',
-                        description: 'That\'s where the milk is hot to the touch but not simmering. Then froth using your desired method to froth the milk until it\'s very foamy.',
-                        available: 20,
-                        price: 88.99
-                    }
+                        
+                    @endforeach
+
                 ]
             },
-            {
-                coffeeType: 'cold coffee',
-                selectedIndex: 0,
-                data: [
-                    { 
-                        name: 'affogato',
-                        available: 10,
-                        price: 79.99
-                    },
-                    { 
-                        name: 'maple pecan latte',
-                        mini: 'The traditional maple pecan latte uses espresso',
-                        description: 'Like the sweet aroma of Autumn, the latte is a warm blend of coffee and steamed milk with notes of maple and pecan topped with whipped cream and more pecans.',
-                        available: 12,
-                        price: 23.5
-                    },
-                    { 
-                        name: 'white chocolate mocha',
-                        available: 5,
-                        price: 86.00
-                    }
-                ]
-            }
+                
+            @endforeach
         ];
     </script>
 </body>

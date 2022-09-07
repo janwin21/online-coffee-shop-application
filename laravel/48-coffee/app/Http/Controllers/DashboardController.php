@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CoffeeType;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
     
-    public function dashboard() {
-        $coffee_types = CoffeeType::get();
-        
-        // dd($coffee_type); exit;
-
+    public function dashboard() 
+    {
         return view('dashboard', [
-            'coffee_types' => $coffee_types
+            'users' => User::get(),
+            'coffee_types' => CoffeeType::get()
         ]);
     }
 

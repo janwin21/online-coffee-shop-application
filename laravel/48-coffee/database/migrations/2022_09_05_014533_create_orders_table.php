@@ -16,11 +16,15 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('costumer_id');
+            $table->unsignedBigInteger('user_id')->nullable()->default(null);
+            $table->unsignedBigInteger('coffee_id');
             $table->string('service_type');
             $table->string('coffee_name');
             $table->string('coffee_type');
             $table->tinyInteger('coffee_quantity');
             $table->foreign('costumer_id')->references('id')->on('costumers')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('coffee_id')->references('id')->on('coffees')->onDelete('cascade');
             $table->timestamps();
         });
     }

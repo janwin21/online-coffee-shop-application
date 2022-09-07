@@ -25,4 +25,9 @@
         &:hover { color: $primary !important; }
         &:active { color: $secondary !important; }
     }
+
+    button {
+        background-color: transparent !important;
+        border: none !important;
+    }
 }

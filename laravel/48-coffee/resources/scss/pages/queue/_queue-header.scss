@@ -23,6 +23,11 @@
         }
     }
 
+    strong p { font-size: 0.9em !important; }
+    .dine-in { color: $green !important; }
+    .take-out { color: $red !important; }
+    .delivery { color: $purple !important; }
+
 }
 
 // queue collection
@@ -47,23 +52,35 @@
                 th, td { font-size: 0.9em; }
                 .dine-in { color: $green !important; }
                 .take-out { color: $red !important; }
+                .delivery { color: $purple !important; }
             }
 
-            a { 
-                position: absolute;
-                bottom: 0; left: 0;
+            button { 
                 background-color: $red !important; 
                 border: 1px solid $red;
 
                 &:hover {
                     background-color: $gray-900 !important;
                     border: 1px solid $gray-900 !important;
+                    color: $white !important;
                 }
 
                 &:active {
                     background-color: $red !important;
                     border: 1px solid $red !important;
                 }
+            }
+
+            .btn-danger {
+                position: absolute;
+                bottom: 0; left: 0;
+            }
+
+            .btn-secondary {
+                position: absolute;
+                bottom: 0; right: 0;
+                background-color: $green !important; 
+                border: 1px solid $green !important; 
             }
         }
 

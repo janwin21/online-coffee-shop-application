@@ -11,4 +11,8 @@ class CoffeeType extends Model
 
     protected $fillable = ['coffee_type', 'bg_color', 'font_color'];
     protected $table = 'coffee_types';
+
+    public function coffees() {
+        return $this->hasMany(Coffee::class);
+    }
 }

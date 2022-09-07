@@ -120,12 +120,13 @@
             border: 1px solid $info !important;
         }
 
-        .btn-primary {
+        .btn-primary, .btn-warning {
             @include transition-to-all-25;
 
             &:hover { 
                 background-color: $gray-900 !important; 
                 border: 1px solid $gray-900 !important;
+                color: $white !important;
             }
 
             &:active { 

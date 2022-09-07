@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\CoffeeTypeController;
 use App\Http\Controllers\CostumerController;
 use App\Http\Controllers\DashboardController;
@@ -21,6 +22,7 @@ Route::get('/', function () { return view('pages.index'); })->name('page.home');
 
 Route::resource('/drinks', CostumerController::class);
 Route::resource('/coffee-type', CoffeeTypeController::class);
+Route::resource('/coffee', CoffeeController::class);
 Route::resource('/feedback', FeedbackController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');

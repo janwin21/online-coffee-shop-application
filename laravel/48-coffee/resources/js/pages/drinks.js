@@ -24,7 +24,7 @@ $(document).ready(() => {
     const coffeeTable = new CoffeeTable(
         $('.coffee-buy-table table'), 
         $('#amount'), $('#table-size'), 
-        $('#table-service'), $('.take-out, .dine-in')
+        $('#table-service'), $('.take-out, .dine-in, .delivery')
     ).setInputs($('#col-names'), $('#col-types'), $('#col-quantities')).setServiceBtn();
 
     // coffee order

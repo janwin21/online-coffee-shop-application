@@ -35,4 +35,9 @@ $(document).ready(() => {
 
     new Feedback($('.feedback-column'), $('.feedback-left'), feedbacks).setDetails();
 
+    // confirmation
+    $('.confirm-btn').click(event => {
+        $('.hired-input').val(event.currentTarget.dataset.hired);
+    });
+
 });

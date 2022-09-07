@@ -10870,6 +10870,10 @@ footer .powered i:active, footer .copyright i:active {
 .navbar strong:active {
   color: #E1D3B6 !important;
 }
+.navbar button {
+  background-color: transparent !important;
+  border: none !important;
+}
 
 .open-sans {
   font-family: "Open Sans", sans-serif;
@@ -11719,6 +11723,14 @@ button {
   opacity: 0.9;
 }
 
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 .dashboard-sidebar {
   background-color: #212529 !important;
   overflow-y: auto !important;
@@ -11756,23 +11768,35 @@ button {
 .dashboard-sidebar .edit-type-box p {
   color: #adb5bd !important;
 }
-.dashboard-sidebar .edit-coffee-box {
+.dashboard-sidebar .edit-coffee-box, .dashboard-sidebar .edit-feedback-box {
   background-color: #212529;
+  border-bottom: 1px solid #fff;
 }
-.dashboard-sidebar .edit-coffee-box .card {
+.dashboard-sidebar .edit-coffee-box .card, .dashboard-sidebar .edit-feedback-box .card {
   background-color: #212529;
   box-shadow: none !important;
   border: none !important;
   border-radius: none !important;
 }
-.dashboard-sidebar .edit-coffee-box .card .card-body {
+.dashboard-sidebar .edit-coffee-box .card .card-body, .dashboard-sidebar .edit-feedback-box .card .card-body {
   box-shadow: none !important;
 }
-.dashboard-sidebar .edit-coffee-box .card .card-text {
+.dashboard-sidebar .edit-coffee-box .card .card-text, .dashboard-sidebar .edit-feedback-box .card .card-text {
   color: #adb5bd !important;
 }
-.dashboard-sidebar .edit-coffee-box .card .card-title, .dashboard-sidebar .edit-coffee-box .card .card-text {
+.dashboard-sidebar .edit-coffee-box .card .card-title, .dashboard-sidebar .edit-coffee-box .card .card-text, .dashboard-sidebar .edit-feedback-box .card .card-title, .dashboard-sidebar .edit-feedback-box .card .card-text {
   font-size: 0.8em !important;
+}
+.dashboard-sidebar .edit-coffee-box .card .feedback-btn, .dashboard-sidebar .edit-feedback-box .card .feedback-btn {
+  background-color: #198754 !important;
+  border: 1px solid #198754 !important;
+}
+.dashboard-sidebar .edit-feedback-box {
+  border-bottom: none !important;
+}
+.dashboard-sidebar .edit-feedback-box object {
+  width: 75px !important;
+  animation: jump 1s linear infinite alternate !important;
 }
 .dashboard-sidebar .form-control {
   background-color: transparent !important;

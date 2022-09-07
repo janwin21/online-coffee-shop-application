@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'first_name', 'last_name', 'username', 'age', 'email', 'password',
-        'street_no', 'street', 'barangay', 'city', 'province', 'zip_code'
+        'street_no', 'street', 'barangay', 'city', 'province', 'zip_code', 'hired'
     ];
 
     /**
@@ -43,5 +43,9 @@ class User extends Authenticatable
 
     public function feedbacks() {
         return $this->hasMany(Feedback::class);
+    }
+
+    public function orders() {
+        return $this->hasMany(Orders::class);
     }
 }

@@ -52,7 +52,8 @@ class RegisteredUserController extends Controller
             'province' => $request->province,
             'zip_code' => $request->zip_code,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'hired' => $request->hired === 'true'
         ]);
 
         event(new Registered($user));
