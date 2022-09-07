@@ -93,6 +93,52 @@
                     </form>
 
                 </div>
+
+                <!-- Feedback -->
+                <div class="edit-feedback-box mt-3">
+
+                    <form action="{{ route('feedback.store') }}" method="POST">
+                        @csrf
+
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <object class="mt-3" data="{{ asset('svg/feedback.svg') }}"></object>
+                                <h5 class="card-title text-light mb-3 mt-5"><strong>Feedback</strong></h5>
+                                <p class="card-text text-light mb-5">The feedback you provided is displayed in the login page.</p>
+
+                                <!-- Feedback Radio -->
+                                <div class="form-control px-0 mb-2 text-start">
+                                    <p class="text-light">Rate our website<strong class="ms-1 text-danger">*</strong></p>
+                                    <!-- excellent -->
+                                    <input required type="radio" id="excellent" name="rate" value="excellent">
+                                    <label class="roboto ms-2" for="rate">excellent</label><br>
+                                    <!-- well-done -->
+                                    <input required type="radio" id="well-done" name="rate" value="well-done">
+                                    <label class="roboto ms-2" for="rate">well-done</label><br>
+                                    <!-- good -->
+                                    <input required type="radio" id="good" name="rate" value="good">
+                                    <label class="roboto ms-2" for="rate">good</label><br>
+                                    <!-- its-ok -->
+                                    <input required type="radio" id="its-ok" name="rate" value="its-ok">
+                                    <label class="roboto ms-2" for="rate">its-ok</label><br>
+                                    <!-- poor -->
+                                    <input required type="radio" id="poor" name="rate" value="poor">
+                                    <label class="roboto ms-2" for="rate">poor</label><br>
+                                </div>
+
+                                <!-- Feedback Textarea -->
+                                <div class="form-control px-0 text-start">
+                                    <label class="roboto mb-4" for="comment">What do you feel about our website?<strong class="ms-1 text-danger">*</strong></label>
+                                    <textarea required class="roboto pb-1 w-100" name="comment" placeholder="type your comment here..."></textarea>
+                                </div>
+                                <div class="col-4 float-end w-75 me-0 mt-2"><button type="submit" class="btn btn-primary feedback-btn open-sans shadow-none add-btn w-100">Enter</button></div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
 
             <!-- Main Content -->

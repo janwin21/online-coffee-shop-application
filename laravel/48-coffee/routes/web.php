@@ -3,6 +3,7 @@
 use App\Http\Controllers\CoffeeTypeController;
 use App\Http\Controllers\CostumerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::get('/', function () { return view('pages.index'); })->name('page.home');
 
 Route::resource('/drinks', CostumerController::class);
 Route::resource('/coffee-type', CoffeeTypeController::class);
+Route::resource('/feedback', FeedbackController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 

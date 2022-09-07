@@ -39,6 +39,8 @@ class CostumerController extends Controller
      */
     public function store(CostumerRequest $request) 
     {
+        $request->validated();
+
         $coffeeNames = explode(',', $request->coffee_names);
         $coffeeTypes = explode(',', $request->coffee_types);
         $coffeeQuantities = explode(',', $request->coffee_quantities);

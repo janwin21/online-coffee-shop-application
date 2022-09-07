@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CoffeeTypeRequest;
-use App\Models\CoffeeType;
+use App\Http\Requests\FeedbackRequest;
+use App\Models\Feedback;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CoffeeTypeController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,14 +36,14 @@ class CoffeeTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CoffeeTypeRequest $request)
+    public function store(FeedbackRequest $request)
     {
         $request->validated();
-        
-        CoffeeType::create([
-            'coffee_type' => $request->coffee_type,
-            'bg_color' => $request->bg_color,
-            'font_color' => $request->font_color
+
+        Feedback::create([
+            'user_id' => Auth::user()->id,
+            'rate' => $request->rate,
+            'comment' => $request->comment
         ]);
 
         return redirect()->intended(RouteServiceProvider::HOME);
@@ -90,7 +91,6 @@ class CoffeeTypeController extends Controller
      */
     public function destroy($id)
     {
-        CoffeeType::where('id', $id)->delete();
-        return redirect()->intended(RouteServiceProvider::HOME);
+        //
     }
 }

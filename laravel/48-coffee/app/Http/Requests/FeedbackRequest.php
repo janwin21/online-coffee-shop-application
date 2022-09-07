@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CoffeeTypeRequest extends FormRequest
+class FeedbackRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class CoffeeTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'coffee_type' => ['required', 'string', 'max:60', 'unique:coffee_types'],
-            'bg_color' => ['required', 'string'],
-            'font_color' => ['required', 'string']
+            'rate' => ['required', 'string'],
+            'comment' => ['required', 'max:1000']
         ];
     }
 }

@@ -3,6 +3,7 @@
 @use "../../components/mixins" as *;
 
 // dashboard sidebar section
+@include jump;
 .dashboard-sidebar {
     background-color: $gray-900 !important;
     overflow-y: auto !important;
@@ -36,8 +37,9 @@
         p { color: $gray-500 !important; }
     }
 
-    .edit-coffee-box {
+    .edit-coffee-box, .edit-feedback-box {
         background-color: $gray-900;
+        border-bottom: 1px solid $white;
 
         .card {
             background-color: $gray-900;
@@ -47,11 +49,22 @@
 
             .card-body { box-shadow: none !important; }
             .card-text { color: $gray-500 !important; }
+            .card-title, .card-text { font-size: 0.8em !important; }
 
-            .card-title, .card-text {
-                font-size: 0.8em !important;
+            .feedback-btn {  
+                background-color: $green !important;
+                border: 1px solid $green !important;
             }
         }
+    }
+
+    .edit-feedback-box {
+        border-bottom: none !important;
+
+        object { 
+            width: 75px !important; 
+            animation: jump 1s linear infinite alternate !important;
+        }    
     }
 
     .form-control {

@@ -23,13 +23,15 @@
                 </a></li>
             @endif
             
-            <li class="nav-item"><a class="nav-link open-sans ms-2" href="{{ route('drinks.index') }}">
+            <li class="nav-item"><a class="nav-link open-sans ms-2 {{ Request::is('drinks') ? 'active' : '' }}" href="{{ route('drinks.index') }}">
                 Queue
             </a></li>
             <li class="nav-item"><a class="nav-link open-sans ms-2" href="./about.html">
                 About Us
             </a></li>
-            <li class="nav-item"><a class="nav-link open-sans ms-2 {{ Request::is('login') ? 'active' : '' }}" href="{{ route('login') }}">
+            <li class="nav-item"><a class="nav-link open-sans ms-2
+                {{ (Request::is('login') || Request::is('dashboard')) ? 'active' : '' }}" href="{{ route('login') }}">
+
                 <strong>
                     @if(Auth::user())
                         Dashboard
@@ -40,10 +42,10 @@
             </a></li>
             
             @if(Auth::user())
-                <form method="POST" action="{{ route('logout') }}">
+                <form class="m-0 p-0" method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <li class="nav-item"><button type="submit" class="nav-link open-sans ms-2" href="./about.html">
+                    <li class="nav-item login m-0 p-0"><button type="submit" class="nav-link open-sans ms-2">
                         Logout
                     </button></li>
                 </form>

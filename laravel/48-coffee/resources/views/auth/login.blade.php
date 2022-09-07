@@ -193,53 +193,15 @@
         
     @endsection
 
-    <script>
+    <script> 
         let feedbacks = [
-            {
-                username: 'Gibbv',
-                rate: 'well-done',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non, obcaecati voluptas rerum sapiente quisquam totam?'
-            },
-            {
-                username: 'Photon',
-                rate: 'poor',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-            },
-            {
-                username: 'Ronnie',
-                rate: 'excellent',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elitgpsa dignissimos non orem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elitgpsa dignissorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elitgpsa dignissorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elitgpsa digniss'
-            },
-            {
-                username: 'Cruz',
-                rate: 'excellent',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non, obcaecati voluptas rerum sapiente quisquam totam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non, obcaecati voluptas rerum sapiente quisquam totam?'
-            },
-            {
-                username: 'Tan',
-                rate: 'its-ok',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non'
-            },
-            {
-                username: 'Alcan',
-                rate: 'excellent',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-            },
-            {
-                username: 'Manner',
-                rate: 'good',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non'
-            },
-            {
-                username: 'Ken',
-                rate: 'its-ok',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elitgpsa dignissimos non'
-            },
-            {
-                username: 'Wolve',
-                rate: 'well-done',
-                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. ing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non ing elit. Natus, omnis vel aspernatur at voluptates velit animi dolorem quia beatae sunt eaque ipsa dignissimos non'
-            }
+            @foreach ($feedbacks as $feedback)
+                {
+                    username: '{{ $feedback->user->username }}',
+                    rate: '{{ $feedback->rate }}',
+                    description: '{{ $feedback->comment }}'
+                },
+            @endforeach
         ];
     </script>
 </body>
