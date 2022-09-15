@@ -78,10 +78,12 @@
 
                         @if (Auth::user())
                             @if (isset($order))
+                            @if (isset($order->user->id))
                             @if (Auth::user()->id == $order->user->id)
 
                             <button type="submit" class="btn finalize-btn btn-danger px-4 py-1 shadow-none m-3" data-value="cancel">Cancel</button>
 
+                            @endif
                             @endif
                             @endif
 
